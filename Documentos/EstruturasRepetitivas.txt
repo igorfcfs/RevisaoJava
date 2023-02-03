@@ -1,0 +1,22 @@
+While
+
+while(condicao){
+    comando1
+    comando2
+}
+
+int x = 2;
+while(x < 10){
+    System.out.println("Mais um")
+    x++;
+}
+
+For
+
+for(variavel; condicao; incremento){
+   comandos
+}
+
+for(int x = 1; x < 3; x++){
+    System.out.println("Mais um");
+}

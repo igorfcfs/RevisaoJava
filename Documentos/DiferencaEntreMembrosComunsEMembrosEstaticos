@@ -1,0 +1,18 @@
+Membros estaticos x membros
+
+class Classe {
+    static double PI = 3,14159;
+}
+
+class Program{
+    public static void main(String[] args){
+    	Para chamar um metodo ou atributo comum vc precisa da instancia de um objeto para isso:
+        Classe classe = new Classe();
+		classe.metodo();
+		System.out.println(classe.PI);
+		
+		Para chamar um metodo ou atributo estatico vc pode chamar pela instancia e pelo nome da classe:
+		Classe.metodo();
+        System.out.println(Classe.PI);
+    }
+}

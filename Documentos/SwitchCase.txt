@@ -1,0 +1,21 @@
+if(x == 1){
+    System.out.println("1");
+} else if(x == 1){
+    System.out.println("2");
+} else {
+    System.out.println("Algo deu errado");
+}
+
+		X
+
+Switch(x){
+case 1:
+    System.out.println("1");
+    break;
+case 2:
+    System.out.println("2");
+    break;
+default:
+    System.out.println("Algo deu errado");
+    break;
+}

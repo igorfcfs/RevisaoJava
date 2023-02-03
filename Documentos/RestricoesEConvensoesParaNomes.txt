@@ -1,0 +1,17 @@
+nao pode comecar com numeros, use _ ou letras
+nao e usual ter acento
+nao pode ter espacos
+
+int 5minutos | int _5minutos
+int salário | int salario;
+int salario do funcionario | int salarioDoFuncionario
+
+Convencoes
+Camel Case: lastName
+	pacotes
+	atributos
+	metodos
+	variaveis e parametros
+
+Pascal Case: ProductService
+	classes

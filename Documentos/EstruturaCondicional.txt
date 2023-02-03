@@ -1,0 +1,17 @@
+if(condicao 1){
+    comando1;
+} else if(condicao 2){
+    comando2;
+} else {
+    comando3;
+}
+
+Exemplo:
+int x = 3;
+if (x > 2){
+    System.out.println("x e maior q 2");
+} else if(x < 2){
+    System.out.println("x e menor q 2");
+} else{
+    System.out.println("x e igual 2");
+}

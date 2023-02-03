@@ -1,0 +1,18 @@
+Operadores de atribuicao cumulativa
+a = a + b | a += b
+a = a - b | a -= b
+a = a * b | a *= b
+a = a / b | a /= b
+
+Operadores Logicos
+"E" - && - A && B
+"OU" - || - A || B
+Negacao - ! - A != B
+
+Operadores Bitwise
+"E" - & - A && B
+"OU" - | - A || B
+Negacao - ~ - A ^= B
+XOR - ^ - A ^ B
+
+
