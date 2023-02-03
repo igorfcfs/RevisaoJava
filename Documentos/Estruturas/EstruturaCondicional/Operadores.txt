@@ -1,3 +1,11 @@
+Operadores comparativos - C, C++, C#, Java, 
+> - maior
+< - menor
+>= - maior ou igual
+<= - menor ou igual
+== - igual
+!= - diferente
+
 Operadores de atribuicao cumulativa
 a = a + b | a += b
 a = a - b | a -= b
@@ -14,5 +22,3 @@ Operadores Bitwise
 "OU" - | - A || B
 Negacao - ~ - A ^= B
 XOR - ^ - A ^ B
-
-

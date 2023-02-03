@@ -1,4 +1,4 @@
-package Matematica;
+package matematica;
 import java.util.*;
 
 public class Matematica {
@@ -41,8 +41,10 @@ public class Matematica {
 		case "divisao":
 			System.out.println(divisao(x, y));
 			break;
-		default: 
-			System.out.println("Voce nao digitou nenhuma operacao valida!");
+		case "todas":
+			System.out.println(todas(x, y));
+//		default: 
+//			System.out.println("Voce nao digitou nenhuma operacao valida!");
 		}
 		
 		sc.close();
@@ -54,10 +56,17 @@ public class Matematica {
 	public static int subtracao(int a, int b) {
 		return a - b;
 	}
-	public static int multiplicacao(int a, int b) {
-		return a * b;
+	public static double multiplicacao(int a, int b) {
+		return (double)a * b;
 	}
-	public static int divisao(int a, int b) {
-		return a / b;
+	public static double divisao(int a, int b) {
+		return (double)a / b;
+	}
+	public static String todas(int a, int b) {
+		return "Soma: " + soma(a, b) 
+		+ "\nSubtracao: " + subtracao(a, b) 
+		+ "\nMultiplicacao: " + multiplicacao(a, b) 
+		+ "\nDivisao: " 
+		+ divisao(a, b);
 	}
 }

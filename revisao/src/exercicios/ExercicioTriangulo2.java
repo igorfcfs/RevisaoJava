@@ -1,16 +1,10 @@
-package Exercicios;
+package exercicios;
 import java.util.Scanner;
 
-class Triangulo2 {
-	private double a;
-	private double b;
-	private double c;
-	
-	Triangulo2(double a, double b, double c){
-		this.a = a;
-		this.b = b;
-		this.c = c;
-	}
+class Triangulo {
+	double a;
+	double b;
+	double c;
 	
 	public double area() {
 		double p = (a + b + c)/2; 
@@ -19,22 +13,23 @@ class Triangulo2 {
 	}
 }
 
-public class ExercicioTriangulo3 {
+public class ExercicioTriangulo2 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter the measures of triangle A: ");
-		double ax = sc.nextDouble();
-		double bx = sc.nextDouble();
-		double cx = sc.nextDouble();
-		System.out.println("Enter the measures of triangle B: ");
-		double ay = sc.nextDouble();
-		double by = sc.nextDouble();
-		double cy = sc.nextDouble();
+		Triangulo x = new Triangulo();
+		Triangulo y = new Triangulo();
 		
-		Triangulo2 x = new Triangulo2(ax, bx, cx);
-		Triangulo2 y = new Triangulo2(ay, by, cy);
+		System.out.println("Enter the measures of triangle A: ");
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c = sc.nextDouble();
+		
+		System.out.println("Enter the measures of triangle B: ");
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
 		
 		double areaX = x.area();
 		double areaY = y.area();

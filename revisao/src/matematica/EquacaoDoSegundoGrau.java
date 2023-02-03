@@ -1,4 +1,4 @@
-package Matematica;
+package matematica;
 import java.util.*;
 
 public class EquacaoDoSegundoGrau {

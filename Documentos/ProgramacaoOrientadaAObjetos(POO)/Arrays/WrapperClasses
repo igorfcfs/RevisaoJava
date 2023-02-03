@@ -1,0 +1,17 @@
+Wrapper Classes
+	Sao classes equivalentes aos tipos primitivos
+	Boxing e Unboxing sao comum em sua linguagem
+	Uso comum: campo de entidades em sistema de informacao(importante)
+		pois tipos de referencia(classes) aceitam valor null e usufruem dos recursos OO
+
+Object
+boolean - Boolean
+char - Character
+
+Object.Number
+byte - Byte
+short - Short
+int - Integer
+long - Long
+float - Float
+double - Double

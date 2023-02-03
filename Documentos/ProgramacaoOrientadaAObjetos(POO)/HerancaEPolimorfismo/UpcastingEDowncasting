@@ -1,0 +1,9 @@
+Upcasting
+	Casting da subclasse para a superclasse
+	Uso comum: polimorfismo
+
+Downcasting
+	Casting da superclasse para a subclasse
+	Palavra instanceof
+	Uso comum: palavras que recebem parametros genericos
+	

@@ -1,0 +1,16 @@
+Laco Foreach
+
+for(tipo_de_apelido : colecao){
+	comandos
+}
+
+ex:
+String[] vect = new String[] {"Maria", "Bob", "Brown"};
+
+for(int i = 0; i < vect.length; i++){
+	System.out.println(vect[i]);
+}
+			X
+for(String obj : vect){
+	System.out.println(obj);
+}

@@ -1,4 +1,4 @@
-package Exercicios;
+package exercicios;
 import java.util.*;
 public class ExercicioTriangulo {
 	public static void main(String[] args) {

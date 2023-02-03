@@ -1,0 +1,8 @@
+Heranca
+
+Definicoes importantes:
+	Relacao "e-um"
+	Generalizacao/especializacao
+	Superclasse(classe base)/subclasse(classe derivada)
+	Heranca/extencao
+	Heranca e uma associacao entre classe(e nao entre objetos)
