@@ -1,7 +1,11 @@
 Classes abstratas
-
-
+	Sao classe que nao podem ser instanciadas
+	Eh uma forma de garantir heranca total: somente subclasses nao abstratas podem ser instanciadas,
+	mas nunca a superclasse abstrata.
+	Notacao UML: italico
 
 Metodos abstratos
-
-
+	Sao metodos que nao possuem implementacao
+	Metodos precisam ser abstratos quando a classe e generica demais para conter sua implementacao
+	Se uma classe possuir pelo menos um metodo abstrato, entao esta classe tambem eh abstrata
+	Notacao UML: italico

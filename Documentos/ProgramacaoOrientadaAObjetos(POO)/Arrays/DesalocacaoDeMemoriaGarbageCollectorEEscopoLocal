@@ -1,0 +1,12 @@
+Desalocacao de Memoria - Garbage Collector e Escopo Local
+
+Garbage Collector
+	Eh um processo que automatiza o gerenciamento de memoria de um programa em execucao.
+	O Garbage Collector monitora os objetos alocados dinamicamente pelo programa(no heap),
+	desalocando aqueles que nao estao mais sendo utilizados.
+
+Resumo
+	Objetos alocados dinamicamente, quando nao possuem mais referencia para eles, serao deslocados
+	pelo Garbage Collector.
+	Variaveis locais sao desalocadas imediatamente assim que seu escopo local sai de execucao
+	

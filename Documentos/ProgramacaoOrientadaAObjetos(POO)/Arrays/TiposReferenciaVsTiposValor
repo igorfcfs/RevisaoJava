@@ -1,0 +1,39 @@
+Tipos referencia vs. Tipos Valor
+
+Classes sao tipos referencia
+	Variaveis cujo tipo sao classes nao devem ser entendidas como "caixas", mas sim
+	"tentaculos"(ponteiros) para caixas
+
+Valor null
+	Tipos referencia Aceitam o valor "null", que indica que a variavel aponta pra ninguem
+
+Tipos primitivos sao tipos valor
+	Em Java, tipos primitivos sao tipos valor. Tipos valor sao "caixas" e nao ponteiros
+
+Valores default(padrao)
+	Quando alocamos (new) qualquer tipo estruturado (classe ou array), sao atribuidos valores padrao
+	aos seus elementos
+		numeros: 0
+		boolean: false
+		char: caracter codigo 0
+		objeto: null
+
+Classe
+	Vantagem: Usufrui de todos os recursos OO(Orientacao a Objetos)
+	Variaveis sao ponteiros
+	Objetos precisam ser instanciados usando new, ou apontar para um objeto ja existente
+	Aceita valor null
+	Y = X;
+		"Y passa a apontar para onde X aponta"
+	Objetos instanciados no heap
+	Objetos nao utilizados sao desalocado em um momento proximo pelo garbage collector
+
+Tipo Primitivo
+	Vantagem: eh mais simples e mais performatico
+	Variaveis sao caixas
+	Nao instancia, uma vez declarados, estao prontos para uso
+	Nao aceito valor null
+	Y = X;
+		"Y recebe uma copia de X"
+	"Objetos" instanciados no stack
+	"Objetos" sao desalocados imediatamente quando seu escopo de execucao eh finalizado

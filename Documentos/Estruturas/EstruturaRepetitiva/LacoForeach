@@ -1,16 +1,18 @@
 Laco Foreach
+	Sintaxe opcional e simplificada para percorrer colecoes
+	
+	Sintaxe:
+		for(tipo_de_apelido : colecao){
+			comandos
+		}
 
-for(tipo_de_apelido : colecao){
-	comandos
-}
-
-ex:
-String[] vect = new String[] {"Maria", "Bob", "Brown"};
-
-for(int i = 0; i < vect.length; i++){
-	System.out.println(vect[i]);
-}
-			X
-for(String obj : vect){
-	System.out.println(obj);
-}
+	Ex:
+		String[] vect = new String[] {"Maria", "Bob", "Brown"};
+		
+		for(int i = 0; i < vect.length; i++){
+			System.out.println(vect[i]);
+		}
+					X
+		for(String obj : vect){
+			System.out.println(obj);
+		}

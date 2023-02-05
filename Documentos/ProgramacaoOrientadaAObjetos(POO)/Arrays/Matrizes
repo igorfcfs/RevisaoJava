@@ -1,1 +1,11 @@
 Matrizes
+	Em programacao, "matriz" eh o nome dado a arrays bidimensionais
+	Array eh uma estrutora de dados:
+		Homogenea(dados do mesmo tipo)
+		Ordenada(Elementos acessados por meio de posicoes)
+		Alocada de uma vez so, em um bloco contiguo de memoria
+	Vantagens:
+		Acesso imediato pelos elementos pela sua posicao
+	Desvantagens:
+		Tamanho fixo
+		Dificuldade para se realizar insercoes e delecoes

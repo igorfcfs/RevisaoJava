@@ -1,4 +1,10 @@
 Heranca
+	Eh um tipo de associacao que permite que uma classe herde todos dados e comportamentos de outra
+	Vantagens:
+		reuso
+		polimorfismo
+	sintaxe:
+		class A extends B
 
 Definicoes importantes:
 	Relacao "e-um"

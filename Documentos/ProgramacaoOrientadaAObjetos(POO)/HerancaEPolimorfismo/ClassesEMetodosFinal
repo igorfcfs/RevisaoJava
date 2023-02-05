@@ -1,7 +1,5 @@
 Classes final
-
-
+	Evita que a classe seja herdada
 
 Metodos final
-
-
+	Evita que o metodo seja sobreposto/sobrescrito

@@ -1,1 +1,22 @@
 Vetores
+	Em programacao, "vetor" eh o nome dado a arrays unidimensionais
+	Array eh uma estrutora de dados:
+		Homogenea(dados do mesmo tipo)
+		Ordenada(Elementos acessados por meio de posicoes)
+		Alocada de uma vez so, em um bloco contiguo de memoria
+	Vantagens:
+		Acesso imediato pelos elementos pela sua posicao
+	Desvantagens:
+		Tamanho fixo
+		Dificuldade para se realizar insercoes e delecoes
+
+Manipulacao de vetor de elementos tipo valor(tipo primitivo):
+	int[] vect = new int[10];
+	vect[1] = 2;
+
+Manipulacao de vetor de elementos tipo referencia(classe):
+	Classe[] vect = new Classe[10];
+	vect[1] = new Classe();	
+
+Propriedade length:
+	vect.length;	

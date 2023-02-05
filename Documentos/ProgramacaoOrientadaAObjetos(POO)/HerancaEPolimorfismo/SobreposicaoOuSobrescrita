@@ -1,1 +1,5 @@
 Sobreposicao ou Sobrescrita
+	Eh a implementacao de um metodo da superclasse na subclasse
+	Eh fortemente recomendado usar a anotacao @Override em um metodo sobrescrito
+		Facilita a leitura e compreensao do codigo
+		Avisamos o compilador

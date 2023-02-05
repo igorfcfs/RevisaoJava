@@ -1,1 +1,17 @@
 Polimorfismo
+	Em programacao orientada a objetos, Polimorfismo eh um recurso que permite que variaveis de um 
+	mesmo tipo mais generico possam apontar para objetos de tipos especificos diferentes, tendo
+	assim comportamentos diferentes de acordo com cada tipo especifico.
+	
+	Variaveis do mesmo tipo comportando-se de varias formas diferentes.
+	
+	Ex:
+		Account x = new Account(1020, "Alex", 1000.0);
+		Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01);
+		x.withdraw(50.0);
+		y.withdraw(50.0);
+	
+Pilares da OOP(Programacao Orientada a Objetos)
+	Encapsulamento
+	Heranca
+	Polimorfismo

@@ -1,1 +1,12 @@
 Palavra super
+	E possivel chamar a implementacao da superclasse usando a palavra super.
+
+	Ex:
+		Suponha que, na classe BusinessAccount, a regra para saque seja realizar o saque normalmente
+		da superclasse, e desconta mais 2.0.
+		
+		@Override
+		public void withdraw(double ammount) {
+			super.withdraw(ammount);
+			balance -= 2.0;
+		}
