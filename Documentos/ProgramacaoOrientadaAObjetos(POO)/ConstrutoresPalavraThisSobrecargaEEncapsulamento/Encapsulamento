@@ -1,0 +1,10 @@
+Encapsulamento
+	Eh um principio que consiste em esconder detalhes de implementacao de uma classe, expondo apenas
+	operacoes seguras e que mantenham os objetos em um estado consistente
+	
+	Regra de ouro: o objeto deve sempre estar em um estado consistente, e a propria classe deve
+	garantir isso
+	
+Regra geral basica
+	Um objeto nao deve expor nenhum atributo(modificador de acesso private)
+	Os atributos devem ser acessados por meio de metodos get e set

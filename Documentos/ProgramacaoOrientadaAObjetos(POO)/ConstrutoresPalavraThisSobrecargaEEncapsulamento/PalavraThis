@@ -1,0 +1,6 @@
+Palavra this
+	Eh uma referencia para o proprio objeto
+	
+	Usos comuns:
+		Diferenciar atributos de variaveis locais
+		Passar o proprio objeto como argumento na chamada de um metodo ou construtor

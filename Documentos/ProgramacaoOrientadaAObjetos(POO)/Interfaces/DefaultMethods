@@ -1,0 +1,19 @@
+Default methods(defender methods)
+	A partir do Java 8, interfaces podem conter metodos concretos
+	
+	A intencao basica eh prover implementacao padrao para metodos, de modo a evitar:
+		1- Repeticao de implementacao em toda classe que implemente a interface
+		2- A necessidade de se criar classes abstratas para prover reuso da implementacao
+		
+	Outras vantagens:
+		Manter a retrocompatbilidade com sistemas existentes
+		Permitir que "interfaces funcionais"(que devem conter apenas um metodo) possam prover outras
+		operacoes padrao reutilizaveis
+
+Consideracoes importantes
+	Sim: agora as interfaces podem prover reuso
+	Sim: agora temos uma forma de heranca multipla
+		Mas o compilador reclama se houver mais de um metodo com a mesma assinatura, obrigando a
+		sobrescreve-lo
+	Interfaces ainda sao bem diferentes de classes abstratas. Interfaces nao possuem recursos tais
+	como construtores e atributos

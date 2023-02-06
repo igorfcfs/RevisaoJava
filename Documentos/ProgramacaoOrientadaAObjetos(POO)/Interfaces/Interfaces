@@ -1,0 +1,10 @@
+Interface
+	Eh um tipo que define um conjunto de operacoes que uma classe deve implementar
+	A interface estabelece um contrato que a classe deve cumprir
+	Pra que interfaces?
+		Para criar sistemas de baixo acoplamento e flexiveis
+
+Aviso
+	A partir do Java 8, interfaces podem ter "default methods" ou "defender methods"
+
+

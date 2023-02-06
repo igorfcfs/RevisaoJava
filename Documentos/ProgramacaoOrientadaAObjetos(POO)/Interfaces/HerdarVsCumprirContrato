@@ -1,0 +1,8 @@
+Aspectos em comum entre Heranca e Interface
+	Relacao eh-um
+	Generalizacao/especializacao
+	Polimorfismo
+
+Diferenca fundamental
+	Heranca => reuso
+	Interface => contrato a ser cumprido

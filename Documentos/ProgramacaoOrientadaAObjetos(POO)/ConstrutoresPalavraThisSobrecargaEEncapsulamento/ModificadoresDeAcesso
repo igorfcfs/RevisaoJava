@@ -1,0 +1,5 @@
+Modificadores de acesso
+	private: o membro so pode ser acessado na propria classe
+	<package private>: o membro so pode ser acessado nas classes do mesmo pacote
+	protected: o membro so pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes
+	public: o membro e acessado por todas as classe(ao menos que ele resida em um modulo diferente que nao exporte o pacote onde ele esta)
