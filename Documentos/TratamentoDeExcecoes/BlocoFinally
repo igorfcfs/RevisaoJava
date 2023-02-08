@@ -1,0 +1,35 @@
+Bloco finally
+	Eh um bloco que contem codigo a ser executado independentemente de ter ocorrido ou nao uma excecao.
+	Exemplo classico: fechar um arquivo, conexao de banco de dados, ou outro recurso especifico ao final do processamento.
+	Sintaxe:
+		try {
+		}
+		catch (ExceptionType e) {
+		}
+		finally {
+		}
+Demo:
+	package application;
+	import java.io.File;
+	import java.io.IOException;
+	import java.util.Scanner;
+	public class Program {
+		public static void main(String[] args) {
+			File file = new File("C:\\temp\\in.txt");
+			Scanner sc = null;
+			try {
+				sc = new Scanner(file);
+				while (sc.hasNextLine()) {
+					System.out.println(sc.nextLine());
+				}
+			}
+			catch (IOException e) {
+				System.out.println("Error opening file: " + e.getMessage());
+			}
+			finally {
+				if (sc != null) {
+					sc.close();
+				}
+			}
+		}
+	}

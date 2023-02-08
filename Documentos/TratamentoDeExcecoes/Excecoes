@@ -1,0 +1,25 @@
+Exceções
+	Uma excecao eh qualquer condicao de erro ou comportamento inesperado encontrado por um programa em execucao
+	Em Java, uma exceção eh um objeto herdado da classe:
+		java.lang.Exception - o compilador obriga a tratar ou propagar
+		java.lang.RuntimeException - o compilador nao obriga a tratar ou propagar
+	Quando lancada, uma excecao eh propagada na pilha de chamadas de metodos em execucao, ate que seja capturada (tratada) ou o programa seja encerrado
+
+Hierarquia de exceções do Java
+	https://docs.oracle.com/javase/10/docs/api/java/lang/package-tree.html
+	Throwable
+		Error
+			OutOfMemoryError
+			VirtualMachineError
+		Exception
+			IOException
+			RuntimeException
+				IndexOutOfBoundsException	
+				NullPointerException
+
+Por que exceções?
+	O modelo de tratamento de excecoes permite que erros sejam tratados de forma consistente e flexivel, usando boas praticas
+	Vantagens:
+		Delega a lógica do erro para a classe responsavel por conhecer as regras que podem ocasionar o erro
+		Trata de forma organizada (inclusive hierárquica) exceções de tipos diferentes
+		A exceção pode carregar dados quaisquer

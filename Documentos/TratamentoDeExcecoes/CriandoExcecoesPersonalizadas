@@ -1,0 +1,12 @@
+Resumo da aula
+	Clausula throws: propaga a excecao ao inves de trata-la
+	Clausula throw: lança a excecao / "corta" o metodo
+	Exception: compilador obriga a tratar ou propagar
+	RuntimeException: compilador nao obriga
+	O modelo de tratamento de excecoes permite que erros sejam tratados de forma consistente e flexivel, usando boas praticas
+	Vantagens:
+		Logica delegada
+		Construtores podem ter tratamento de excecoes
+		Possibilidade de auxilio do compilador (Exception)
+		Codigo mais simples. Não ha aninhamento de condicionais: a qualquer momento que uma excecao for disparada, a execucao eh interrompida e cai no bloco catch correspondente.
+		Eh possivel capturar inclusive outras excecoes de sistema

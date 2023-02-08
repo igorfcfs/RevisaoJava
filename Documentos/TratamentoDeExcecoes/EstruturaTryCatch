@@ -1,0 +1,40 @@
+Estrutura try-catch
+	Bloco try
+		Contem o codigo que representa a execucao normal do trecho de codigo que pode acarretar em uma excecao
+	Bloco catch
+		Contem o codigo a ser executado caso uma excecao ocorra
+		Deve ser especificado o tipo da excecao a ser tratada (upcasting eh permitido)
+	Demo
+
+Sintaxe
+	try {
+	}
+	catch (ExceptionType e) {
+	}
+	catch (ExceptionType e) {
+	}
+	catch (ExceptionType e) {
+	}
+
+Demo:
+	package application;
+	import java.util.InputMismatchException;
+	import java.util.Scanner;
+	public class Program {
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			try {
+				String[] vect = sc.nextLine().split(" ");
+				int position = sc.nextInt();
+				System.out.println(vect[position]);
+			}
+			catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Invalid position!");
+			}
+			catch (InputMismatchException e) {
+				System.out.println("Input error");
+			}
+			System.out.println("End of program");
+			sc.close();
+		}
+	}
