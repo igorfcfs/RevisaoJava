@@ -1,0 +1,9 @@
+Categorias de classes
+	Em um sistema orientado a objetos, de modo geral "tudo" é objeto.
+	Por questoes de design tais como organização, flexibilidade, reuso, delegacao, etc., ha varias
+	categorias de classes:
+		Controllers
+		Entities
+		Services
+		Views
+		Repositories

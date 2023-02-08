@@ -1,0 +1,10 @@
+Composição
+	Eh um tipo de associacao que permite que um objeto contenha outro
+	Relacao "tem-um" ou "tem-vários"
+	Vantagens:
+		Organização: divisao de responsabilidades
+		Coesao
+		Flexibilidade
+		Reuso
+	Nota: embora o simbolo UML para composicao (todo-parte) seja o diamante preto, neste contexto
+	estamos chamando de composicao qualquer associacao tipo "tem-um" e "tem-varios".

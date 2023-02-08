@@ -1,0 +1,27 @@
+hashCode e equals
+	Sao operacoes da classe Object utilizadas para comparar se um objeto eh igual ao outro
+	
+	equals: lento, resposta 100%
+	hashCode: rapido, porem, resposta positiva nao eh 100%
+	
+	Tipos comuns (String, Date, Integer, Double, etc) ja possuem implementacao para essas operacoes.
+	Classes personalizadas precisam sobrepo-las
+
+Equals
+	Metodo que compara se o objeto eh igual ao outro, retornando true ou false.
+	
+	String a = "Igor";
+	String b = "Fernando";
+	System.out.println(a.equals(b));
+
+HashCode
+	Metodo que retorna um numero inteiro representando um codigo gerado a partir das informacoes do
+	objeto
+		String a = "Igor";
+		String b = "Fernando";
+		System.out.println(a.hashCode());
+		System.out.println(b.hashCode());
+
+Regra de ouro do hashCode
+	Se o hashCode de dois objetos for diferente, entao os dois objetos sao diferentes
+	Se o codigo de dois objetos for igual, muito provavelmente os objetos sao iguais(pode haver colisao)

@@ -1,0 +1,23 @@
+Interface funcional
+	Eh uma interface que possui um unico metodo abstrato. Suas implementacoes serao tratadas como
+	expressoes lambda.
+	public class MyComparator implements Comparator<Product> {
+		@Override
+		public int compare(Product p1, Product p2) {
+			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+		}
+	}
+	public static void main(String[] args) {
+		(...)
+		list.sort(new MyComparator());
+	}
+
+Algumas outras interfaces funcionais comuns
+	Predicate
+		https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html
+	Function
+		https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html
+	Consumer
+		https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html
+		Nota: ao contrário das outras interfaces funcionais, no caso do Consumer, é
+		esperado ele possa gerar efeitos colaterais

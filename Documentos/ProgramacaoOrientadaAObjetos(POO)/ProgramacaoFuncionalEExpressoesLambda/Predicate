@@ -1,0 +1,14 @@
+Predicate (exemplo com removeIf)
+
+Predicate
+	https://docs.oracle.com/javase/10/docs/api/java/util/function/Predicate.html
+	public interface Predicate<T> {
+		boolean test (T t);
+	}
+
+Versoes:
+	Implementacao da interface
+	Reference method com metodo estatico
+	Reference method com metodo não estatico
+	Expressao lambda declarada
+	Expressao lambda inline

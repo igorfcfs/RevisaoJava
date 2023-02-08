@@ -1,0 +1,10 @@
+Generics sao invariantes
+	List<Object> nao eh supertipo de quaquer tipo de lista:
+		List<Object> myObjs = new ArrayList<>();
+		List<Integer> myNumbers = new ArrayList<>();
+		myObjs = myNumbers //erro de compilacao
+	
+	O supertipo de qualquer tipo de lista eh List<?>. Este eh um tipo curinga:
+		List<?> myObjs = new ArrayList<>();
+		List<Integer> myNumbers = new ArrayList<>();
+		myObjs = myNumbers //erro de compilacao

@@ -1,0 +1,13 @@
+Function (exemplo com map)
+Function
+	https://docs.oracle.com/javase/10/docs/api/java/util/function/Function.html
+	public interface Function<T, R> {
+		R apply (T t);
+	}
+	
+Nota sobre a funcao map
+	A função "map" (nao confunda com a estrutura de dados Map) eh uma
+	funcao que aplica uma funcao a todos elementos de uma stream.
+	Conversoes:
+		List para stream: .stream()
+		Stream para List: .collect(Collectors.toList())

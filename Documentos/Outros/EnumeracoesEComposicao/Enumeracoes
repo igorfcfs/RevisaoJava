@@ -1,0 +1,35 @@
+Checklist
+	Definição / discussao
+	Exemplo: estados de um pedido
+	Conversao de string para enum
+	Representacao UML
+
+Enumeracoes
+	Eh um tipo especial que serve para especificar de forma literal um conjunto de constantes relacionadas
+	Palavra chave em Java: enum
+	Vantagem: melhor semantica, codigo mais legivel e auxiliado pelo compilador
+	Referencia: https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+Ex:
+	package entities.enums;
+		public enum OrderStatus {
+		PENDING_PAYMENT,
+		PROCESSING,
+		SHIPPED,
+		DELIVERED;
+	}
+	--//--
+	package entities;
+	import java.util.Date;
+	import entities.enums.OrderStatus;
+	public class Order {
+		private Integer id;
+		private Date moment;
+		private OrderStatus status;
+		(...)
+	}
+	https://github.com/acenelio/enum1-java
+	
+Conversão de String para enum
+	OrderStatus os1 = OrderStatus.DELIVERED;
+	OrderStatus os2 = OrderStatus.valueOf("DELIVERED");

@@ -1,0 +1,6 @@
+Criando funcoes que recebem funcoes como argumento
+
+Recordando
+	removeIf(Predicate)
+	foreach(Consumer)
+	map(Function)
