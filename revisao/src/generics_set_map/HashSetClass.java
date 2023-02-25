@@ -18,6 +18,6 @@ public class HashSetClass {
 	    	  System.out.println(i);
 	    }
 	    cars.clear();
-	    System.out.println(cars);
+	    System.out.println(cars);	    
 	}
 }
