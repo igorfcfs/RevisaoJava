@@ -1,6 +1,6 @@
 package working_with_java_data_types;
 
-public class WorkingWithDataTyperWrapperTypes {
+public class WorkingWithDataTypesWrapperTypes {
 	public static void main(String[] args) {
 		
 		// Question 8
