@@ -1,0 +1,199 @@
+Operator and Parentheses
+
+Precedência dos Operadores em Java
+ Tipo	               Categoria                 Precedência
+Unário               -> sufixos                -> expr++ expr--
+		                prefixos               -> ++expr --expr +expr -expr ~ !
+Aritmético           -> multiplicativo         -> * / %
+			            aditivo                -> + -
+Mudança              -> mudança                -> << >> >>>
+Relacional           -> comparação             -> < > <= >= instanceof
+			            igualdade              -> == !=
+Bit a bit            -> bit a bit AND          -> &
+			            bit a bit OR exclusivo -> ^
+			            bit a bit OR           -> |
+Lógico               -> AND lógico             -> &&
+                        OR lógico              -> ||
+Ternário             -> ternário               -> ?:
+Atribuição           -> atribuição             -> = += -= *= /= %= &= ^= |= <<= >>= >>>=
+
+
+53 / 2.0 // 26.5
+25 % 2.0 // 1.0
+
+"1" + "2" + "3" == "1" + "2" + "3" = "123" == "123" = TRUE
+
+String x = "123";
+String y = "123";
+x == y = false
+x.equals(y) = true;
+
+String can't be compared with int
+"String" != 5; //compilation error
+
+
+If only one operand expression is of type String, then string conversion is performed on the other operand to produce a string at run time.
+
+If one of the operand is null, it is converted to the string "null".
+
+
+String text = null;
+null + null + null //error
+text + text + text //no error, + operator converts null to "null" when we use a reference
+
+1. System.out.println(text.repeat(3)); //-> null.repeat(3) - refers to null - NullPointerException at Runtime
+2. System.out.println(null + null + null); //-> Compilation error as operator + is undefined for the arguments: null, null
+3. System.out.println(null + "null" + null); //-> If either one of the operand is of String type, then operator + acts as concatenation operator.
+4. System.out.println(text *= 3); //-> Compilation error as *= operator is undefined for the arguments: String, int
+5. System.out.println(text += "null".repeat(2)); //-> text = null + "nullnull" => text = "nullnullnull"
+6. System.out.println(text + text + text); //-> Even though text refers to null but + operator is defined for the arguments: String, String. So, no compilation error.
+7. text += null; System.out.println((text.concat(null))); //-> First statement, `text += null;` is equals to `text = text + null`. As text is of String type, hence given operator behaves as String Concatenation operator and that is why null reference is converted to "null". So, first statement translates to: `text = "null" + "null"` and that is why text refers to "nullnull". Second statement, `System.out.println((text.concat(null)));` = `System.out.println(("nullnull".concat(null)));` If you see the source code of concat(String str) it uses str.length(); so invoking length() method on null reference causes NullPointerException.
+
+
+class A {
+    public String toString() {
+        return null;
+    }
+}
+ 
+public class Test {
+    public static void main(String [] args) {
+        String text = null;
+        text = text + new A(); //-> text = "null" + "null" => text = "nullnull"
+        System.out.println(text.length()); //Line n2
+    }
+}
+
+//como text eh uma variavel do tipo String, o operador + exerce a funcao de concatenacao;
+//como new A() eh uma instancia da classe A, ele chama o metodo toString() que retorna null.
+
+
+You need to keep in mind an important point related to String Concatenation:
+
+If only one operand expression is of type String, then string conversion is performed on the other operand to produce a string at run time.
+
+If one of the operand is null, it is converted to the string "null".
+
+If operand is not null, then the conversion is performed as if by an invocation of the toString method of the referenced object with no arguments; but if the result of invoking the toString method is null, then the string "null" is used instead.
+
+
+Let's check the expression of Line n1:
+
+text = text + new A(); --> As text is of String type, hence + operator behaves as concatenation operator.
+
+As text is null, so "null" is used in the Expression.
+
+new A() represents the object of A class, so toString() method of A class is invoked, but as toString() method of A class returns null, hence "null" is used in the given expression.
+
+So, given expression is written as:
+
+text = "null" + "null";
+
+text = "nullnull";
+
+
+Hence, Line n2 prints 8 on to the console.
+
+
+
+String text = "RISE ";
+text = text + (text = "ABOVE ");
+System.out.println(text);
+
+
+Initially text refers to "RISE ".
+
+Given statement:
+
+text = text + (text = "ABOVE ");
+
+text = "RISE " + (text = "ABOVE "); //Left operand of + operator is evaluated first, text --> "RISE "
+
+text = "RISE " + "ABOVE "; //Right operand of + operator is evaluated next, text --> "ABOVE "
+
+text = "RISE ABOVE "; //text --> "RISE ABOVE "
+
+
+Hence `System.out.println(text);` print 'RISE ABOVE ' on to the console.
+
+
+
+
+StringBuilder sb = new StringBuilder("INHALE ");
+String s = sb.toString() + (sb.append("EXHALE "));
+System.out.println(s.strip().length());
+
+//"INHALE " + "INHALE EXHALE " = "INHALE INHALE EXHALE ".strip() - "INHALE INHALE EXHALE".length() - 20
+
+
+int x = 7;
+boolean res = x++ == 7 && ++x == 9 || x++ == 9;
+System.out.println("x = " + x);
+System.out.println("res = " + res);
+
+//7(depois +1) == 7 && ((agora +1)=1+8)9 == 9 || 9(depois +1) == 9
+//true && true || true = true || true = true
+//x = 9(boolean res = true || ((x++) == 9); //x = 9, || is a short-circuit operator, given expression evaluates to true without evaluating `((x++) == 9)`); res = true
+
+
+
+int a = 1000;
+System.out.println(-a++);
+//-1000(depois +1)
+//-1000; a = 1001
+
+
+
+public class Test {
+    public static void main(String [] args) {
+        int i = 2;
+        boolean res = false;
+        res = i++ == 2 || --i == 2 && --i == 2;
+        System.out.println(i);
+    }
+}
+//((i++) == 2) || ((--i == 2) && ((--i) == 2)) -> || is a short-circuit operator -> left = true - skip right
+
+You are correct, the output of the code will be 3.
+
+Here's how the code works:
+
+    Declare an integer variable i and initialize it to 2.
+    Declare a boolean variable res and initialize it to false.
+    Evaluate the expression i++ == 2 || --i == 2 && --i == 2.
+    The i++ == 2 part of the expression is true because i is currently 2, and the post-increment operator (++) increments i to 3 after the comparison. So, the expression now evaluates to true || --i == 2 && --i == 2.
+    The || operator is a short-circuit operator, which means that if the left operand is true, the right operand is not evaluated. So, the value of res is set to true and the remaining part of the expression is not evaluated.
+    The value of i is still 3 because the post-increment operator was used in the first part of the expression, which means that i was incremented after the comparison.
+    The value of i is not decremented because the right operand of the || operator was not evaluated due to short-circuiting.
+    The value of i is printed to the console, which is 3.
+
+Therefore, the output will be 3.
+
+O output (saída) do código será 3.
+
+Aqui está como o código funciona:
+
+    Declara uma variável inteira i e a inicializa como 2.
+    Declara uma variável booleana res e a inicializa como false.
+    Avalia a expressão i++ == 2 || --i == 2 && --i == 2.
+    A parte i++ == 2 da expressão é verdadeira porque i está atualmente como 2, e o operador de pós-incremento (++) incrementa i para 3 após a comparação. Assim, a expressão agora avalia para true || --i == 2 && --i == 2.
+    O operador || é um operador de curto-circuito, o que significa que se o operando esquerdo é verdadeiro, o operando direito não é avaliado. Então, o valor de res é definido como true e a parte restante da expressão não é avaliada.
+    O valor de i ainda é 3 porque o operador de pós-incremento foi usado na primeira parte da expressão, o que significa que i foi incrementado após a comparação.
+    O valor de i não é decrementado porque o operando direito do operador || não foi avaliado devido ao curto-circuito.
+    O valor de i é impresso no console, que é 3.
+
+Portanto, a saída será 3.
+
+
+
+
+
+var val = 9;
+System.out.println(val += 10 - -val-- - --val);
+
+val = ((9 + 10) - (-(val--))) - (--val) //val=9
+val = (19 - (-(val--))) - (--val) //val=9
+val = (19 - (-9)) - (--val) //val=8
+val = 28 - (--val) //val=8
+val = 28 - 7 //val=7
+val = 21

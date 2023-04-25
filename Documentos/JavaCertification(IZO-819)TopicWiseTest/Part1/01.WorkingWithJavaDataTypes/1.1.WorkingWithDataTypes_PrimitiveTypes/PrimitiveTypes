@@ -1,0 +1,38 @@
+Primitive Types
+
+byte - 1 byte = -128 to 127
+short - 2 bytes = -32,768 to 32,767
+int - 4 bytes = -2,147,483,648 to 2,147,483,647
+long - 8 bytes = -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float - 4 bytes = 6 to 7 decimal digits
+double - 8 bytes = 15 decimal digits
+boolean - 1 bit = true or false
+char - 2 bytes = single character/letter or ASCII values
+
+Non-Primitive Types
+String
+Array
+Classes
+
+
+(byte)(127 + 21) = -108
+int i = 2;
+byte x = i; xxx byte x = (byte) i;
+
+double x = 2.2;
+int i = (int)x;
+...
+
+char a = 'a';
+int b = a; //'a' - 97
+
+
+1. int x = 5____0;
+
+2. int y = ____50; xxx
+
+3. int z = 50____; xxxx
+
+4. float f = 123.76_86f;
+
+5. double d = 1_2_3_4;

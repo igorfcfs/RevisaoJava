@@ -1,0 +1,14 @@
+Wrapper Types
+
+
+Boolean b1 = Boolean.valueOf("tRuE");  //true
+Boolean b2 = Boolean.valueOf("fAlSe"); //false
+Boolean b3 = Boolean.valueOf("abc");   //false
+Boolean b4 = null;					   //null
+System.out.println(b1 + ":" + b2 + ":" + b3 + ":" + b4);
+
+Boolean.valueOf(String) method uses equalsIgnoreCase method to validate the passed String, so if passed String is "true" ('t', 'r', 'u' and 'e' can be in any case), then boolean value stored in Boolean object is true otherwise false.
+
+
+
+
