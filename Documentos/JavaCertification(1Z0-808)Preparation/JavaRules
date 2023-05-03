@@ -1,0 +1,5 @@
+you cannot write a class that implements two
+interfaces that define the same default method unless you override the default method in the
+class.
+
+Os nomes de variáveis e identificadores em geral no Java não podem começar com caracteres especiais e nem com números e, apesar de válido, devem-se evitar os caracteres underscore "_" e cifrão "$". Além disso, o nome das variáveis devem ser pequenos e de fácil entendimento.

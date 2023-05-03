@@ -1,0 +1,20 @@
+Arrays
+
+int[] ids, types; = int[] ids; int[] types;
+int ids[], types; = int[] ids;int types;
+
+int[] numbers = new int[3]; -> create an array that can hava 3 elements
+int[] numbers = new int[] {1, 2, 3}; -> create an unsorted array
+int[] numbers = {1, 2, 3}; -> create a sorted array
+
+import java.util.Arrays;
+Arrays.sort(); -> organize the arrays
+Arrays.binarySearch(array, int index) -> search for a element in array
+
+varargs(variable arguments) -> String... args
+
+Creating a multi-dimensional array
+int[][] vars1; // 2D array
+int vars2 [][]; // 2D array
+int[] vars3[]; // 2D array
+int[] vars4 [], space [][]; // a 2D AND a 3D array

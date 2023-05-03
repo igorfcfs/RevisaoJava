@@ -1,0 +1,38 @@
+ArrayList
+
+import java.util.ArrayList;
+
+The three forms to create an ArrayList:
+ArrayList list1 = new ArrayList();
+ArrayList list2 = new ArrayList(10);
+ArrayList list3 = new ArrayList(list2);
+ArrayList<String> list4 = new ArrayList<String>(); -> java5 introduced generics
+ArrayList<String> list5 = new ArrayList<>(); -> java7
+List<String> list6 = new ArrayList<>();
+ArrayList<String> list7 = new List<>(); // DOES NOT COMPILE
+
+Inteface List, an ArrayList implements List, so ArrayList is a List
+
+ArrayList Methods
+
+add() -> add an element in the list
+boolean add(E element)
+void add(int index, E element)
+
+remove() -> remove the list element
+boolean remove(Object object)
+E remove(int index)
+
+set() -> override the list element
+E set(int index, E newElement)
+
+isEmpty() -> return if the list are empty
+
+size() -> return the size of the list, similar to length()
+
+clear() -> remove/discard all elements from the list
+
+contains() -> check if certain value is in ArrayList
+boolean contains(Object object)
+
+equals() -> compare if two lists have the same elements at the same order

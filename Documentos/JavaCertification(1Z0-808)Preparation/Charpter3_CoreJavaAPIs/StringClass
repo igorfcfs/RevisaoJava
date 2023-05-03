@@ -1,0 +1,43 @@
+String class
+String name = "name"; -> String pool, literal strings, collected by jvm
+String name = new String("Name"); -> Isn't a String pool(ineficient), aren't collected by jvm
+Immutable objects, for example strings, cannot be collected by garbage collector
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+String methods
+length()
+charAt(int index)
+------------------------------------------------------------------------------------------
+indexOf(int ch); indexOf(int ch, int fromIndex)
+indexOf(String str)
+indexOf(String str, int fromIndex)
+indexOf() returns –1 when no match is found.
+------------------------------------------------------------------------------------------
+substring(int beginIndex)
+substring(int beginIndex, int endIndex)
+begin: inclusive, end: exclusive
+
+System.out.println(string.substring(3, 3)); // empty string
+System.out.println(string.substring(3, 2)); // throws exception
+System.out.println(string.substring(3, 8)); // throws exception
+------------------------------------------------------------------------------------------
+toLowerCase()
+toUpperCase()
+------------------------------------------------------------------------------------------
+equals(Object obj)
+equalsIgnoreCase(String str)
+------------------------------------------------------------------------------------------
+startsWith(String str)
+endsWith(String str)
+contains(String str)
+------------------------------------------------------------------------------------------
+replace(char oldChar, char newChar)
+replace(CharSequence oldChar, CharSequence newChar)
+
+System.out.println("abcabc".replace('a', 'A')); // AbcAbc
+System.out.println("abcabc".replace("a", "A")); // AbcAbc
+------------------------------------------------------------------------------------------
+trim() - remove whitespaces of beginning and end of a String
+*strip() - just available on java 11, the evolution of trim()
+*stripLeading() - remove whitespaces of the beginning of a String (left)
+*stripTrailing() - remove whitespaces of the end of a String (right)

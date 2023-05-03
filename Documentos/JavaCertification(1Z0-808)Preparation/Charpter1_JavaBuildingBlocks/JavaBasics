@@ -1,0 +1,399 @@
+Java Basics
+
+*Understanding the Java Class Structure*
+
+java class structure: class Class {}
+
+Fields and Methods
+Java classes primary elements: methods and fields/variables/members
+
+public class Animal {
+	String name; //field
+	public String getName(){//method
+		return this.name;
+	}
+	public void/*return type*/ setName(String name){//method
+		this.name = name;
+	}
+}
+---------------------------------------------------------------------
+Comments
+// -> comment until end of line
+
+/* Multiple
+ * line comment
+ */ -> multiline comment
+
+/**
+ * Javadoc multiple-line comment
+ * @author Jeanne and Scott
+ */
+
+Examples
+/*
+* // anteater -> multiline comment
+*/
+
+// bear -> single-line comment
+// // cat -> single-line comment
+// /*dog*/ -> single-line comment
+/* elephant */ -> multiline comment
+
+/*
+ * /* ferret */ -> compilation error
+ */
+
+/*
+ * /* ferret */ -> multiline comment
+---------------------------------------------------------------------
+Classes vs. Files
+public class Animal {//the name of the .java file must be Animal.java because the Animal class is public
+	private String name;
+}
+class Animal2{ //a file can have just one class with the public access modifier
+}
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+*Writing a main() Method*
+public class Zoo{
+	public static void main(String[] args){
+	}
+}
+*Compile and run a .java file on command line
+$ javac Zoo.java
+$ java Zoo
+
+"The keyword static binds a method to its class so it can be called by just the class name,
+as in, for example, Zoo.main(). Java doesn’t need to create an object to call the main()
+method—which is good since you haven’t learned about creating objects yet! In fact, the
+JVM does this, more or less, when loading the class name given to it. If a main() method
+isn’t present in the class we name with the .java executable, the process will throw an error
+and terminate. Even if a main() method is present, Java will throw an exception if it isn’t
+static. A nonstatic main() method might as well be invisible from the point of view of the
+JVM."
+
+public class Zoo {
+	public static void main(String[] args) {
+		System.out.println(args[0]);
+		System.out.println(args[1]);
+	} 
+}
+args[0] accesses the first element of the array. That’s right: array indexes begin with 0
+in Java. To run it, type this:
+
+$ javac Zoo.java
+$ java Zoo Bronx Zoo
+
+The output is what you might expect:
+Bronx
+Zoo
+
+$ javac Zoo.java
+$ java Zoo "San Diego" Zoo
+
+The output is what you might expect:
+San Diego
+Zoo
+
+if you didn't pass the arguments the code will throw a ArrayIndexOutOfBoundsException
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+*Understanding Package Declarations and Import*
+
+import java.util.Random;
+public class Classe {
+	public static void main(String[] args){
+		Random random = new Random();
+		System.out.println(random.nextInt(10));//0-9
+	}
+}
+---------------------------------------------------------------------
+Wildcards
+import java.util.*; // imports java.util.Random among other things
+public class ImportExample {
+	public static void main(String[] args) {
+		Random r = new Random();
+		System.out.println(r.nextInt(10));
+	}
+}
+---------------------------------------------------------------------
+Redundant Imports
+1: import java.lang.System;//redundant
+2: import java.lang.*;//redundant
+3: import java.util.Random;
+4: import java.util.*; //redundant
+5: public class ImportExample {
+6: 		public static void main(String[] args) {
+7: 			Random r = new Random();
+8: 			System.out.println(r.nextInt(10));
+9: 		}
+10: }
+
+
+Imagine that the classes Paths and Files are in java.nio.files.Paths and java.nio.files.Files respectively:
+public class InputImports {
+	public void read(Files files) {
+		Paths.get("name");
+	}
+}
+
+There are two possible answers. The shorter one is to use a wildcard to import both at
+the same time:
+	
+	import java.nio.file.*;
+
+The other answer is to import both classes explicitly:
+	import java.nio.file.Files;
+	import java.nio.file.Paths;
+
+Now let’s consider some imports that don’t work:
+	import java.nio.*; // NO GOOD – a wildcard only matches
+							//class names, not "file.*Files"
+	import java.nio.*.*; // NO GOOD – you can only have one wildcard
+							//and it must be at the end
+	import java.nio.file.Paths.*; // NO GOOD – you cannot import methods
+							//only class names
+---------------------------------------------------------------------
+Naming Conflicts
+	java.util.Date
+	java.sql.Date
+	
+	The answer should be easy by now. You can write either import java.util.*; or
+	import java.util.Date;. The tricky cases come about when other imports are present:
+		import java.util.*;
+		import java.sql.*; // DOES NOT COMPILE
+	When the class is found in multiple packages, Java gives you the compiler error:
+	The type Date is ambiguous
+	
+	In our example, the solution is easy—remove the java.sql.Date import that we don’t
+	need. But what do we do if we need a whole pile of other classes in the java.sql package?
+		import java.util.Date; //this one have more precedence
+		import java.sql.*;
+	
+	One more example. What does Java do with “ties” for precedence?
+		import java.util.Date;
+		import java.sql.Date;
+	The import java.sql.Date collides with another import statement
+	
+	If you really want to use java.util.Date and java.sql.Data in the same file
+	import java.util.Date;
+	public class Conflicts {
+		Date date;
+		java.sql.Date sqlDate;
+	}
+	Or you could have neither with an import and always use the fully qualified class name:
+	public class Conflicts {
+		java.util.Date date;
+		java.sql.Date sqlDate;
+	}
+---------------------------------------------------------------------
+Creating a New Package
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+*Creating Objects*
+
+Constructors
+Random r = new Random()//creating object and calling the constructor
+
+public class Chick{
+	public Chick(){
+		System.out.println("Chick Constructor");
+	}
+}
+
+public class Chicken {
+	int numEggs = 0;// initialize on line
+	String name;
+	public Chicken() {
+		name = "Duke";// initialize in constructor
+ 	}
+}
+
+public class Swan {
+	int numberEggs;// instance variable
+	public static void main(String[] args) {
+		Swan mother = new Swan();
+		mother.numberEggs = 1; // set variable
+		System.out.println(mother.numberEggs); // read variable
+	}
+}
+
+1: public class Name {
+2: 		String first = "Theodore";
+3: 		String last = "Moose";
+4: 		String full = first + last;
+5: }
+---------------------------------------------------------------------
+Instance Initialize blocks
+3: public static void main(String[] args) {
+4: 		{ System.out.println("Feathers"); }
+5: }
+6: { System.out.println("Snowy"); }
+This code has three code blocks and one instance initialiazable.
+---------------------------------------------------------------------
+Order of inicialization
+	Fields and instance initializer blocks are run in the order in which they appear in
+the file.
+	The constructor runs after all fields and instance initializer blocks have run.
+Let’s look at an example:
+
+1: public class Chick {
+2: 		private String name = "Fluffy";
+3: 		{ System.out.println("setting field"); }
+4: 		public Chick() {
+5: 			name = "Tiny";
+6: 			System.out.println("setting constructor");
+7: 		}
+8: 		public static void main(String[] args) {
+9: 			Chick chick = new Chick();
+10: 		System.out.println(chick.name); } }
+
+Running this example prints this:
+setting field
+setting constructor
+Tiny
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+*Distinguishing Between Object References and Primitives*
+
+Primitive Types
+	Java has eight built-in data types, referred to as the Java primitive types. These eight data
+types represent the building blocks for Java objects, because all Java objects are just a com-
+plex collection of these primitive data types. The exam assumes you are well versed in the
+eight primitive data types, their relative sizes, and what can be stored in them.
+
+
+Keyword 		 Type 				   Example
+boolean 	1-bit true or false 		true
+byte 		8-bit integral 				value 123
+short 		16-bit integral 			value 123
+int 		32-bit integral 			value 123
+long 		64-bit integral 			value 123
+float 		32-bit floating-point 		value 123.45f
+double 		64-bit floating-point 		value 123.456
+char 		6-bit Unicode value 'a'
+
+
+System.out.println(Integer.MAX_VALUE); // return the maximum value a int can have
+
+
+When a number is present in the code, it is called a literal.
+By default, Java assumes you are defining an int value with a literal.
+
+
+Java allows you to specify digits in several other formats then decimal one:
+■ octal (digits 0–7), which uses the number 0 as a prefix—for example, 017
+■ hexadecimal (digits 0–9 and letters A–F), which uses the number 0 followed by x or X
+as a prefix—for example, 0xFF
+■ binary (digits 0–1), which uses the number 0 followed by b or B as a prefix—for example, 0b10
+
+You won’t need to convert between number systems on the exam. You’ll have to recognize valid literal values that can be assigned to numbers.
+
+
+You can have underscores in numbers to make them easier to read:
+	int million1 = 1000000;
+	int million2 = 1_000_000;
+
+You can add underscores anywhere except at the beginning of a literal, the end of a literal, right before a
+	decimal point, or right after a decimal point. Let’s look at a few examples:
+	double notAtStart = _1000.00; // DOES NOT COMPILE
+	double notAtEnd = 1000.00_; // DOES NOT COMPILE
+	double notByDecimal = 1000_.00; // DOES NOT COMPILE
+	double annoyingButLegal = 1_00_0.0_0; // this one compiles
+---------------------------------------------------------------------
+Reference Types
+	A reference type refers to an object (an instance of a class). Unlike primitive types that hold
+their values in the memory where the variable is allocated, references do not hold the value
+of the object they refer to. Instead, a reference “points” to an object by storing the memory
+address where the object is located, a concept referred to as a pointer. Unlike other
+languages, Java does not allow you to learn what the physical memory address is. You can
+only use the reference to refer to the object.
+
+Let’s take a look at some examples that declare and initialize reference types. Suppose
+we declare a reference of type java.util.Date and a reference of type String:
+
+java.util.Date today;
+String greeting;
+
+The today variable is a reference of type Date and can only point to a Date object. The
+greeting variable is a reference that can only point to a String object. A value is assigned
+to a reference in one of two ways:
+
+■ A reference can be assigned to another object of the same type.
+■ A reference can be assigned to a new object using the new keyword.
+
+For example, the following statements assign these references to new objects:
+
+today = new java.util.Date();
+greeting = "How are you?";
+
+The today reference now points to a new Date object in memory, and
+today can be used to access the various fields and methods of this
+Date object. Similarly, the greeting reference points to a new
+String object, "How are you?". The String and Date objects do not
+have names and can be accessed only via their corresponding
+reference.
+---------------------------------------------------------------------
+Key Differences
+
+1.
+Reference types can be assigned null, which means they do not currently refer
+to an object. Primitive types will give you a compiler error if you attempt
+to assign them null.
+
+int value = null; //DOES NOT COMPILE
+String s = null; //COMPILE
+
+2.
+Reference types can be used to call methods when they do not point to null.
+Primitives do not have methods declared on them. In this example, we can call
+a method on reference since it is of a reference type. You can tell length is
+a method because it has () after it. The following line is gibberish. No methods
+exist on len because it is an int primitive. Primitives do not have methods.
+
+String reference = "hello";
+int len = reference.length();
+int bad = len.length(); // DOES NOT COMPILE
+
+3.
+All the primitive types have lowercase type names. All classes that
+come with Java begin with uppercase. You should follow this convention for classes you
+create as well.
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+*Declaring and Initializing Variables*
+A variable is a name for a piece of memory that stores
+data.
+
+String x;
+int y;
+x = "Hello World";
+y = 2;
+
+You can do so in the same statement as the declaration.
+	String x = "Hello World";
+	int y = 2;
+---------------------------------------------------------------------
+Declaring Multiple Variables
+	String s1, s2;
+	String s3 = "yes", s4 = "no";
+
+This code doesn’t compile because it tries to declare multiple variables of different types
+in the same statement.
+	int num, String value; // DOES NOT COMPILE
+---------------------------------------------------------------------
+Identifiers
+
+local variables: variables inside methods and scopes
+instance variables: fields of a class
+class variables: static variable

@@ -1,0 +1,227 @@
+Working with Dates and Times
+
+Before Java 8 - Old Way, isn't on the exam
+Java 8 till nowadays - New Way, is on the exam
+
+import java.time.*;
+
+Creating, manipulating, and formatting dates and times.
+The exam doesn't cover time zones.
+
+Dates are immutable
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Creating Dates and Times
+
+LocalDate -> date
+LocalTime -> time
+LocalDateTime -> date & time
+
+now() -> static method that gives the current date and time.
+
+System.out.println(LocalDate.now());
+System.out.println(LocalTime.now());
+System.out.println(LocalDateTime.now());
+
+2015-01-20
+12:45:18.401
+2015-01-20T12:45:18.401
+
+Java uses T to separate the date and time when converting LocalDateTime to a String.
+
+In USA months comes before dates and they use 12-hour clock a.m/p.m. But Java tends to use 24-hour clock.
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+
+Creating a date with no time:
+LocalDate date1 = LocalDate.of(2015, Month.JANUARY, 20);
+LocalDate date2 = LocalDate.of(2015, 1, 20);
+------------------------------------------------------------------------------------------
+
+methods signature
+public static LocalDate of(int year, int month, int dayOfMonth)
+public static LocalDate of(int year, Month month, int dayOfMonth)
+
+Month is a special type of class called an enum. You don’t need to know about enums on
+the OCA exam and can just treat them as constants.
+
+Java count months with new date and time methods starting from 1 NOT 0.
+
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Creating a time with no date:
+LocalTime time1 = LocalTime.of(6, 15); // hour and minute
+LocalTime time2 = LocalTime.of(6, 15, 30); // + seconds
+LocalTime time3 = LocalTime.of(6, 15, 30, 200); // + nanoseconds
+
+A nanosecond is a billionth of a second—you probably
+won’t need to be that specific.
+------------------------------------------------------------------------------------------
+methods signature
+public static LocalTime of(int hour, int minute)
+public static LocalTime of(int hour, int minute, int second)
+public static LocalTime of(int hour, int minute, int second, int nanos)
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Combining dates and times:
+
+LocalDateTime dateTime1 = LocalDateTime.of(2015, Month.JANUARY, 20, 6, 15, 30);
+LocalDateTime dateTime2 = LocalDateTime.of(date1, time1);
+------------------------------------------------------------------------------------------
+Method Signatures:
+
+public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute)
+public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second)
+public static LocalDateTime of(int year, int month, int dayOfMonth, int hour, int minute, int second, int nanos)
+public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute)
+public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second)
+public static LocalDateTime of(int year, Month month, int dayOfMonth, int hour, int minute, int second, int nanos)
+public static LocalDateTime of(LocalDate date, LocalTime time)
+
+And what about the Constructors?
+The date and time classes have private constructors to force you to use the static methods.
+LocalDate d = new LocalDate(); // DOES NOT COMPILE
+
+LocalDate.of(2015, Month.January, 32); // throws DateTimeException
+java.time.DateTimeException: Invalid value for DayOfMonth
+(valid values 1 - 28/31): 32
+
+							Old way								New way (Java 8 andlater)
+Importing 				import java.util.*; 					import java.time.*;
+
+Creating an
+object with				Date d = new Date(); 					LocalDate d = LocalDate.now();
+the current
+date
+
+Creating an
+object with
+the current				Date d = new Date(); 					LocalDateTime dt = LocalDateTime.now();
+date and 
+time
+
+Creating				Calendar c = Calendar.getInstance();
+an object				c.set(2015, Calendar.JANUARY, 1);
+representing			Date jan = c.getTime();					LocalDate jan = LocalDate.of(2015, Month.JANUARY, 1);
+January 1,						or
+2015					Calendar c = new GregorianCalendar(2015,
+						Calendar.JANUARY, 1);
+						Date jan = c.getTime();
+
+
+Creating Jan-			Calendar c = Calendar.getInstance();
+uary 1, 2015			c.set(2015, 0, 1);						LocalDate jan = LocalDate.of(2015, 1, 1)
+without the				Date jan = c.getTime();
+constant
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Manipulating Dates and Times
+12: LocalDate date = LocalDate.of(2014, Month.JANUARY, 20);
+13: System.out.println(date); // 2014-01-20
+14: date = date.plusDays(2);
+15: System.out.println(date); // 2014-01-22
+16: date = date.plusWeeks(1);
+17: System.out.println(date); // 2014-01-29
+18: date = date.plusMonths(1);
+19: System.out.println(date); // 2014-02-28
+20: date = date.plusYears(5);
+21: System.out.println(date); // 2019-02-28
+22: LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+23: LocalTime time = LocalTime.of(5, 15);
+24: LocalDateTime dateTime = LocalDateTime.of(date, time);
+25: System.out.println(dateTime); // 2020-01-20T05:15
+26: dateTime = dateTime.minusDays(1);
+27: System.out.println(dateTime); // 2020-01-19T05:15
+28: dateTime = dateTime.minusHours(10);
+29: System.out.println(dateTime); // 2020-01-18T19:15
+30: dateTime = dateTime.minusSeconds(30);
+31: System.out.println(dateTime); // 2020-01-18T19:14:30
+
+Date is immutable
+
+Methods to manipulate dates:
+						Can call on LocalDate?		Can call on LocalTime?		Can call on LocalDateTime?
+plusYears/minusYears 			Yes 						No 								Yes
+plusMonths/minusMonths 			Yes 						No 								Yes
+plusWeeks/minusWeeks 			Yes							No 								Yes
+plusDays/minusDays 				Yes			 				No 								Yes
+plusHours/minusHours 			No 							Yes 							Yes
+plusMinutes/minusMinutes 		No	 						Yes 							Yes
+plusSeconds/minusSeconds 		No			 				Yes 							Yes
+plusNanos/minusNanos 			No 							Yes 							Yes
+
+
+<date>.isBefore(LocalDate/LocalTime/LocalDateTime date) -> check if a date is before another one
+------------------------------------------------------------------------------------------
+Working with Periods
+public static void main(String[] args) {
+	LocalDate start = LocalDate.of(2015, Month.JANUARY, 1);
+	LocalDate end = LocalDate.of(2015, Month.MARCH, 30);
+	Period period = Period.ofMonths(1); // create a period
+	performAnimalEnrichment(start, end, period);
+}
+private static void performAnimalEnrichment(LocalDate start, LocalDate end,
+	Period period) { // uses the generic period
+	LocalDate upTo = start;
+	while (upTo.isBefore(end)) {
+	System.out.println("give new toy: " + upTo);
+	upTo = upTo.plus(period); // adds the period
+}}
+
+<date>.plus(Period)
+
+There are 5 ways to create a Period class:
+Period annually = Period.ofYears(1); // every 1 year
+Period quarterly = Period.ofMonths(3); // every 3 months
+Period everyThreeWeeks = Period.ofWeeks(3); // every 3 weeks
+Period everyOtherDay = Period.ofDays(2); // every 2 days
+Period everyYearAndAWeek = Period.of(1, 0, 7); // every year and 7 days
+
+Period wrong = Period.ofYears(1).ofWeeks(1); // every week
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Formatting Dates and Times
+The date and time classes support many methods to get data out of them:
+LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+System.out.println(date.getDayOfWeek()); // MONDAY
+System.out.println(date.getMonth()); // JANUARY
+System.out.println(date.getYear()); // 2020
+System.out.println(date.getDayOfYear()); // 20
+------------------------------------------------------------------------------------------
+LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+LocalTime time = LocalTime.of(11, 12, 34);
+LocalDateTime dateTime = LocalDateTime.of(date, time);
+System.out.println(date.format(DateTimeFormatter.ISO_LOCAL_DATE));
+System.out.println(time.format(DateTimeFormatter.ISO_LOCAL_TIME));
+System.out.println(dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+ISO is a standard for dates. The output of the previous code looks like this:
+2020-01-20
+11:12:34
+2020-01-20T11:12:34
+------------------------------------------------------------------------------------------
+DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+System.out.println(shortDateTime.format(dateTime)); // 1/20/20
+System.out.println(shortDateTime.format(date)); // 1/20/20
+System.out.println(shortDateTime.format(time)); // UnsupportedTemporalTypeException
+------------------------------------------------------------------------------------------
+LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+LocalTime time = LocalTime.of(11, 12, 34);
+LocalDateTime dateTime = LocalDateTime.of(date, time);
+DateTimeFormatter shortF = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+DateTimeFormatter mediumF = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+System.out.println(shortF.format(dateTime)); // 1/20/20 11:12 AM
+System.out.println(mediumF.format(dateTime)); // Jan 20, 2020 11:12:34 AM
+------------------------------------------------------------------------------------------
+Create your own format:
+DateTimeFormatter f = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm");
+System.out.println(dateTime.format(f)); // January 20, 2020, 11:12
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Parsing Dates and Times
+DateTimeFormatter f = DateTimeFormatter.ofPattern("MM dd yyyy");
+LocalDate date = LocalDate.parse("01 02 2015", f);
+LocalTime time = LocalTime.parse("11:22");
+System.out.println(date); // 2015-01-02
+System.out.println(time); // 11:22

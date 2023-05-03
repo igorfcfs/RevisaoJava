@@ -1,0 +1,73 @@
+StringBuilder
+
+StringBuilder are mutable, Strings are immutable
+
+The three forms to create a StringBuilder():
+StringBuilder sb1 = new StringBuilder();
+StringBuilder sb2 = new StringBuilder("animal");
+StringBuilder sb3 = new StringBuilder(10);
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+StringBuilder Methods
+charAt(), indexOf(), length(), substring() - work as same as it works on String class
+------------------------------------------------------------------------------------------
+append(String str)
+
+------------------------------------------------------------------------------------------
+insert(int offset, String str)
+
+3: StringBuilder sb = new StringBuilder("animals");
+4: sb.insert(7, "-"); // sb = animals-
+5: sb.insert(0, "-"); // sb = -animals-
+6: sb.insert(4, "-"); // sb = -ani-mals-
+7: System.out.println(sb);
+
+------------------------------------------------------------------------------------------
+delete(int start, int end)
+deleteCharAt(int index)
+
+StringBuilder sb = new StringBuilder("abcdef");
+sb.delete(1, 3); // sb = adef
+sb.deleteCharAt(5); // throws an exception
+------------------------------------------------------------------------------------------
+reverse() -> "ABC" - "CBA"
+
+toString() -> convert a StringBuilder into a String
+
+StringBuilder x StringBuffer -> StringBuilder is faster because it has no thread safe like StringBuffer
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Understanding equality
+
+StringBuilder one = new StringBuilder();
+StringBuilder two = new StringBuilder();
+StringBuilder three = one.append("a");
+System.out.println(one == two); // false
+System.out.println(one == three); // true
+------------------------------------------------------------------------------------------
+String x = "Hello World";
+String y = "Hello World";
+System.out.println(x == y); // true
+------------------------------------------------------------------------------------------
+String x = "Hello World";
+String z = " Hello World".trim();
+System.out.println(x == z); // false
+------------------------------------------------------------------------------------------
+String x = new String("Hello World");
+String y = "Hello World";
+System.out.println(x == y); // false
+------------------------------------------------------------------------------------------
+String x = "Hello World";
+String z = " Hello World".trim();
+System.out.println(x.equals(z)); // true
+------------------------------------------------------------------------------------------
+1: public class Tiger {
+2: String name;
+3: public static void main(String[] args) {
+4: Tiger t1 = new Tiger();
+5: Tiger t2 = new Tiger();
+6: Tiger t3 = t1;
+7: System.out.println(t1 == t3); // true
+8: System.out.println(t1 == t2); // false
+9: System.out.println(t1.equals(t2)); // false
+10: } }

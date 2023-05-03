@@ -1,0 +1,51 @@
+Wrapper Classes
+
+Primitive type 		Wrapper class 		Example of constructing
+boolean 				Boolean 			new Boolean(true)
+byte 					Byte 				new Byte((byte) 1)
+short 					Short 				new Short((short) 1)
+int 					Integer 			new Integer(1)
+long 					Long 				new Long(1)
+float 					Float 				new Float(1.0)
+double 					Double 				new Double(1.0)
+char 					Character 			new Character('c')
+
+Converting a String to an int/Integer
+int primitive = Integer.parseInt("123"); -> parseInt returns a primitive type
+Integer wrapper = Integer.valueOf("123"); -> valueOf() returns a Wrapper class
+
+Wrapper class 		Converting String to primitive		Converting String to wrapper class
+Boolean 			 Boolean.parseBoolean("true"); 		 Boolean.valueOf("TRUE");
+Byte 				 Byte.parseByte("1"); 				 Byte.valueOf("2");
+Short 				 Short.parseShort("1"); 			 Short.valueOf("2");
+Integer 			 Integer.parseInt("1"); 			 Integer.valueOf("2");
+Long 				 Long.parseLong("1"); 				 Long.valueOf("2");
+Float 				 Float.parseFloat("1"); 			 Float.valueOf("2.2");
+Double 				 Double.parseDouble("1"); 			 Double.valueOf("2.2");
+Character 					None 								None
+
+Converting an array to <Array>List
+3: List<String> list = new ArrayList<>();
+4: list.add("hawk");
+5: list.add("robin");
+6: Object[] objectArray = list.toArray();
+7: System.out.println(objectArray.length); // 2
+8: String[] stringArray = list.toArray(new String[0]);
+9: System.out.println(stringArray.length); // 2
+
+Converting an <Array>List to array
+20: String[] array = { "hawk", "robin" }; // [hawk, robin]
+21: List<String> list = Arrays.asList(array); // returns fixed size list
+22: System.out.println(list.size()); // 2
+23: list.set(1, "test"); // [hawk, test]
+24: array[0] = "new"; // [new, test]
+25: for (String b : array) System.out.print(b + " "); // new test
+26: list.remove(1); // throws UnsupportedOperation Exception
+
+Sorting an ArrayList
+List<Integer> numbers = new ArrayList<>();
+numbers.add(99);
+numbers.add(5);
+numbers.add(81);
+Collections.sort(numbers);
+System.out.println(numbers); [5, 81, 99]

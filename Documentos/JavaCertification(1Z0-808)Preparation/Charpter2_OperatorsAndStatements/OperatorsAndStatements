@@ -1,0 +1,113 @@
+Numeric Promotion Rules
+1. If two values have different data types, Java will automatically promote one of the val-
+ues to the larger of the two data types.
+2. If one of the values is integral and the other is floating-point, Java will automatically
+promote the integral value to the floating-point value’s data type.
+3. Smaller data types, namely byte, short, and char, are first promoted to int any time
+they’re used with a Java binary arithmetic operator, even if neither of the operands is
+int.
+4. After all promotion has occurred and the operands have the same data type, the result-
+ing value will have the same data type as its promoted operands.
+
+------------------------------------------------------------------------------------------
+Order of operator precedence
+Operator 		Symbols and examples
+
+Post-unary operators: expression++,expression--
+Pre-unary operators: ++expression, --expression
+Other unary operators: ~,+, -, !
+Multiplication/Division/Modulus: *, /, %
+Addition/Subtraction: +, -
+Shift operators: <<, >>, >>>
+Relational operators: <, >, <=, >=, instanceof
+Equal to/not equal to: ==, !=
+Logical operators: &, ^, |
+Short-circuit logical operators: &&, ||
+Ternary operators: boolean expression ? expression1 : expression2
+Assignment operators: =, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=
+------------------------------------------------------------------------------------------
+long x = 9L;
+float y = 9f;
+
+short x = 10;
+short y = 3;
+short z = (short)(x * y); // numeric promotion rule 3
+
+overflow or underflow
+The expressions in the previous example now compile, although there’s a cost. The sec-
+ond value, 1,921,222, is too large to be stored as a short, so numeric overflow occurs
+and it becomes 20,678. Overflow is when a number is so large that it will no longer fit
+within the data type, so the system “wraps around” to the next lowest value and counts
+up from there. There’s also an analogous underflow, when the number is too low to fit in
+the data type.
+
+long x = 5;
+long y = (x=3);
+System.out.println(x); // Outputs 3
+System.out.println(y); // Also, outputs 3
+
+The key here is that (x=3) does two things. First, it sets the value of the variable x to be
+3. Second, it returns a value of the assignment, which is also 3. The exam creators are fond
+of inserting the assignment operator = in the middle of an expression and using the value of
+the assignment as part of a more complex expression.
+
+
+
+
+Be wary of short-circuit behavior on the exam, as questions are known to alter a vari-
+able on the right-hand side of the expression that may never be reached. For example, what
+is the output of the following code?
+int x = 6;
+boolean y = (x >= 6) || (++x <= 7);
+System.out.println(x);
+Because x >= 6 is true, the increment operator on the right-hand side of the expression
+is never evaluated, so the output is 6.
+
+
+
+The equality operators are used in one of three scenarios:
+1. Comparing two numeric primitive types. If the numeric values are of different data
+types, the values are automatically promoted as previously described. For example,
+5 == 5.00 returns true since the left side is promoted to a double.
+2. Comparing two boolean values.
+3. Comparing two objects, including null and String values.
+
+
+File x = new File("myFile.txt");
+File y = new File("myFile.txt");
+File z = x;
+System.out.println(x == y); // Outputs false
+System.out.println(x == z); // Outputs true
+
+if then
+if-else-then
+if-else if-then
+switch
+
+loops
+while
+do-while
+for
+foreach
+
+break optionallabel
+continue optionallabel
+
+Data types supported by switch statements include the following:
+■ byte and Byte
+■ short and Short
+■ char and Character
+■ int and Integer
+■ String
+■ enum values
+
+\n - quebra de linha
+\t - tab
+
+
+	Allows optional labels 		Allows unlabeled break 		Allows continue statement
+if 		Yes * 				No 				No
+while 		Yes 				Yes 				Yes
+do while 	Yes 				Yes 				Yes
+for 		Yes 				Yes 				Yes
+switch 		Yes 				Yes 				No
