@@ -1,0 +1,23 @@
+. a, d -> <= is just for numbers
+. a, b, d - right
+. f - right
+. b, c, d, f -> cast x on line 9 to int
+. c - right
+. f - right
+. d - right
+. b - right
+. a x f -> The expression inside the loop incre-
+ments i but then assigns i the old value. Therefore, i ends the loop with the same value
+. d - right
+. a - right
+. d - right
+. a - right
+. c - right
+. e - right
+. d - right
+. d - right
+. b - right
+. d - right
+. b - right
+
+19/20 -> 95%

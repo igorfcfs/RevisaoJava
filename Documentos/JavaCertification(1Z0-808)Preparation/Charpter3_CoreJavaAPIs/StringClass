@@ -1,6 +1,8 @@
 String class
+
 String name = "name"; -> String pool, literal strings, collected by jvm
 String name = new String("Name"); -> Isn't a String pool(ineficient), aren't collected by jvm
+
 Immutable objects, for example strings, cannot be collected by garbage collector
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------

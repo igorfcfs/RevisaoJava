@@ -1,0 +1,26 @@
+. a, b, e - right
+. d - right
+. b, d, e - right
+. a, b -> d x the order does matter - right
+. c, d - right
+. d x e -> ja estou no package aquarium
+. a, b, c - right
+. b - right
+. a, c, d, e - right
+. e - right
+. c, d - right
+. g - right
+. a, d - right
+. b x d -> /my/directory/named/A/Bird.java, if we compile from /my/directory/ package named.A
+. a, e - right
+. b, c, d - right
+. a, e - right
+. c, d, e - right
+. b, d - right
+. a x b, e -> its impossible get a guaranteed that garbage collector will run, finalize() e usado para invocar algo quando vc tiver certeza que o objeto vai morrer, so e invocado quando o garbage collector entra em ação, pode ser chamado de 0 a 1 vez
+. a - right
+. b, e - right
+. c, d - right
+
+20/23 = 87% = 90%
+

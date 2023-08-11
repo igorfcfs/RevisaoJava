@@ -1,0 +1,20 @@
+. b - right
+. b, d - right
+. c - right
+. b - right
+. a, b, d, e x a, b, d -> ArrayIndexOutOfBoundsException, ExceptionsInitializerError and NullPointerException are thrown by JVM. java.io.IOException and NumberFormatException are not.
+. c - right
+. c - right
+. e - right
+. b - right
+. e - right
+. a - right
+. x a, b, d, g
+. a, b, c, e - right
+. a, d x a, c, d, e
+. a, b, d, e - right
+. b - right
+. c, d, e x a, c, d, e
+. b, c, e x a, b, c, e
+. c x c, e
+. x a, e

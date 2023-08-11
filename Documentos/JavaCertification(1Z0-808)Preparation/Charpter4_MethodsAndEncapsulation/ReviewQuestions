@@ -1,0 +1,29 @@
+. b, c - right
+. a, d - right
+. a, c, d - right
+. a, b, g - right
+. d, f, g x d, g -> Options E and F do not compile because they do not declare an array properly. It should be new boolean[] {true}
+. 
+. b, c, d ,f - right
+. b, c, e - right
+. a, c, e - right
+. b - right
+.
+. d - right
+. d x e -> Line 4 doesn’t compile because bench is not set in either of these locations
+. b - right
+. e - right
+. c x b -> falta de atenção extrema
+. a, d, e x b, d, e
+. c, f x c, g
+. a, d x a, g
+. e - right
+. c - right
+. e - right
+. e x a
+. b, c, e - right
+. a x a, e
+. a - right
+. c - right
+. a, d, f - right
+. a, d, f x a, f -> Option D is incorrect because the variable e is already in use from the lambda and cannot be redefined.

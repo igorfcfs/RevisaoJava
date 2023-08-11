@@ -254,6 +254,10 @@ Let’s look at an example:
 9: 			Chick chick = new Chick();
 10: 		System.out.println(chick.name); } }
 
+
+{ System.out.println(name ); } // DOES NOT COMPILE
+private String name = "Fluffy";
+
 Running this example prints this:
 setting field
 setting constructor
@@ -284,6 +288,10 @@ char 		6-bit Unicode value 'a'
 
 System.out.println(Integer.MAX_VALUE); // return the maximum value a int can have
 
+long x = 10; // does not compile
+long x = 10L;
+float y = 10; // does not compie
+float y = 10f;
 
 When a number is present in the code, it is called a literal.
 By default, Java assumes you are defining an int value with a literal.
@@ -393,7 +401,173 @@ in the same statement.
 	int num, String value; // DOES NOT COMPILE
 ---------------------------------------------------------------------
 Identifiers
+■ The name must begin with a letter or the symbol $ or _.
+■ Subsequent characters may also be numbers.
+■ You cannot use the same name as a Java reserved word. As you might imagine, a
+reserved word is a keyword that Java has reserved so that you are not allowed to use it.
+Remember that Java is case sensitive, so you can use versions of the keywords that only
+differ in case. Please don’t, though.
+
+To name a variable you just can use letters, digits(subsequence), $ or _
 
 local variables: variables inside methods and scopes
-instance variables: fields of a class
+instance variables: fields or attributes of a class
 class variables: static variable
+---------------------------------------------------------------------
+Ordering Elements in a Class
+Package declaration package abc; No First line in the file
+Import statements import java.util.*; No Immediately after the package
+Class declaration public class C Yes Immediately after the import
+Field declarations int value; No Anywhere inside a class
+Method declarations void method() No Anywhere inside a class
+---------------------------------------------------------------------
+Destroying Objects
+Garbage Collector -> put the objects away
+
+Garbage Collection
+Garbage collection refers to the process of automatically freeing memory on the heap by
+deleting objects that are no longer reachable in your program.
+
+System.gc();
+
+When objects eligibles to garbage collector?
+■ The object no longer has any references pointing to it.
+■ All references to the object have gone out of scope.
+
+
+finalize() -> This method gets called if the garbage collector tries to collect the object. If the garbage collector
+doesn’t run, the method doesn’t get called. 
+
+For the exam, you need to know that this finalize() call could run zero
+or one time. Now for a more interesting example:
+
+public class Finalizer {
+	private static List
+	objects = new ArrayList();
+	protected void finalize() {
+		objects.add(this); // Don't do this
+} }
+
+---------------------------------------------------------------------
+*Benefits of Java*
+
+Object Oriented: Java is an object-oriented language, which means all code is defi ned in
+classes and most of those classes can be instantiated into objects. We’ll discuss this more
+throughout the book. Many languages before Java were procedural, which meant there were
+routines or methods but no classes. Another common approach is functional programming.
+Java allows for functional programming within a class, but object oriented is still the main
+organization of code.
+
+Encapsulation: Java supports access modifiers to protect data from unintended access
+and modification. Most people consider encapsulation to be an aspect of object-oriented
+languages. Since the exam objectives call attention to it specifically, so do we.
+Platform Independent Java is an interpreted language because it gets compiled to
+bytecode. A key benefit is that Java code gets compiled once rather than needing to be
+40 Chapter 1 ■ Java Building Blocks recompiled for different operating systems. This is known as “write once, run everywhere.”
+On the OCP exam, you’ll learn that it is possible to write code that does not run every-
+where. For example, you might refer to a fi le in a specific directory. If you get asked on the
+OCA exam, the answer is that the same class fi les run everywhere.
+
+Robust: One of the major advantages of Java over C++ is that it prevents memory leaks.
+Java manages memory on its own and does garbage collection automatically. Bad memory
+management in C++ is a big source of errors in programs.
+
+Simple: Java was intended to be simpler than C++. In addition to eliminating pointers,
+it got rid of operator overloading. In C++, you could write a + b and have it mean almost
+anything.
+
+Secure: Java code runs inside the JVM. This creates a sandbox that makes it hard for Java
+code to do evil things to the computer it is running on.
+
+
+----------------------------------------------------------------------------------
+
+Summary
+In this chapter, you saw that Java classes consist of members called fields and methods. An
+object is an instance of a Java class. There are three styles of comment: a single-line com-
+ment (//), a multiline comment (/* */), and a Javadoc comment (/** */).
+
+Java begins program execution with a main() method. The most common signature for
+this method run from the command line is public static void main(String[] args).
+Arguments are passed in after the class name, as in java NameOfClass firstArgument.
+Arguments are indexed starting with 0.
+
+Java code is organized into folders called packages. To reference classes in other pack-
+ages, you use an import statement. A wildcard ending an import statement means you want
+to import all classes in that package. It does not include packages that are inside that one.
+java.lang is a special package that does not need to be imported.
+
+Constructors create Java objects. A constructor is a method matching the class name and
+omitting the return type. When an object is instantiated, fields and blocks of code are
+initialized fi rst. Then the constructor is run.
+
+Primitive types are the basic building blocks of Java types. They are assembled into
+reference types. Reference types can have methods and be assigned to null. In addition to
+“normal” numbers, numeric literals are allowed to begin with 0 (octal), 0x (hex), 0X (hex),
+0b (binary), or 0B (binary). Numeric literals are also allowed to contain underscores as long
+as they are directly between two other numbers.
+
+Declaring a variable involves stating the data type and giving the variable a name.
+Variables that represent fields in a class are automatically initialized to their correspond-
+ing “zero” or null value during object instantiation. Local variables must be specifically
+initialized. Identifiers may contain letters, numbers, $, or _. Identifiers may not begin with
+numbers.
+
+Scope refers to that portion of code where a variable can be accessed. There are three
+kinds of variables in Java, depending on their scope: instance variables, class variables, and
+Exam Essentials 41 local variables. Instance variables are the nonstatic fields of your class. Class variables are
+the static fields within a class. Local variables are declared within a method.
+For some class elements, order matters within the fi le. The package statement comes fi rst
+if present. Then comes the import statements if present. Then comes the class declaration.
+Fields and methods are allowed to be in any order within the class.
+
+Garbage collection is responsible for removing objects from memory when they can
+never be used again. An object becomes eligible for garbage collection when there are no
+more references to it or its references have all gone out of scope. The finalize() method
+will run once for each object if/when it is fi rst garbage collected.
+
+Java code is object oriented, meaning all code is defi ned in classes. Access modifiers
+allow classes to encapsulate data. Java is platform independent, compiling to bytecode. It is
+robust and simple by not providing pointers or operator overloading. Finally, Java is secure
+because it runs inside a virtual machine.
+
+
+--------------------------------------------------------------------------------
+
+
+They are names given to a class, variable, package, method, or interface and allow the programmer to refer to the specific item from any place in the program. 
+
+
+--------------------------------------------------------------------------------
+
+
+Exam Essentials
+Be able to write code using a main() method. A main() method is usually written as public
+static void main(String[] args). Arguments are referenced starting with args[0]. Accessing
+an argument that wasn’t passed in will cause the code to throw an exception.
+
+Understand the effect of using packages and imports. Packages contain Java classes.
+Classes can be imported by class name or wildcard. Wildcards do not look at subdirecto-
+ries. In the event of a confl ict, class name imports take precedence.
+
+Be able to recognize a constructor. A constructor has the same name as the class. It looks
+like a method without a return type.
+
+Be able to identify legal and illegal declarations and initialization. Multiple variables can
+be declared and initialized in the same statement when they share a type. Local variables
+require an explicit initialization; others use the default value for that type. Identifiers may
+contain letters, numbers, $, or _. Identifiers may not begin with numbers. Numeric literals
+may contain underscores between two digits and begin with 1–9, 0, 0x, 0X, 0b, and 0B.
+
+Be able to determine where variables go into and out of scope. All variables go into scope
+when they are declared. Local variables go out of scope when the block they are declared
+in ends. Instance variables go out of scope when the object is garbage collected. Class vari-
+ables remain in scope as long as the program is running.
+
+Be able to recognize misplaced statements in a class. Package and import statements are
+optional. If present, both go before the class declaration in that order. Fields and methods
+are also optional and are allowed in any order within the class declaration.
+
+Know how to identify when an object is eligible for garbage collection. Draw a diagram
+to keep track of references and objects as you trace the code. When no arrows point to a
+box (object), it is eligible for garbage collection.

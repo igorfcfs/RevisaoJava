@@ -1,0 +1,21 @@
+. b, e x b -> all interface methods are implicity public, before java 5 it was implicity public abstract, but now, we can use the default keyword, and we cant use it with abstract
+. b x e -> The code will not compile because the parent class Mammal doesn’t define a no-argument constructor, so the first line of a Platypus constructor should be an explicit call to super(int age).
+. a, b, d x a, b, d, e -> all classes in java does implicity extends Object
+. e x c, e -> the return types are not covariants, Number is not a subclass of Integer
+. d, e x a, d, e, f -> the things that can just be hidden in java is: private instance variables, static methods, public variables and private variables
+. a x d -> faltou declarar o metodo getNumberOfSections() da interface, compilation error
+. c x b, c -> 
+. f - right
+. e x a -> abstract classes doesnt need to override abstract interface methods
+. b, e, f, g x b, c, e, f -> interface x abstract classes: Both can contain public static final variables. Both can be extended using the extends keyword.Both can contain static methods.Neither can be instantiated directly. Interface does not extends java.lang.Object as well as abstract classes.
+. a x a, d, e -> modifiers assumed to all interface methods are: public, static and final
+. a x b -> the object is an instance of Owl class, so it will call the overrided method from its class
+. c x a -> autoboxing makes its class the original method
+. c - right
+. c x b -> 
+. e - right
+. b - right
+. c x e -> String and int are not covariant return types
+. a x a, c, f ->
+. b x a -> 
+

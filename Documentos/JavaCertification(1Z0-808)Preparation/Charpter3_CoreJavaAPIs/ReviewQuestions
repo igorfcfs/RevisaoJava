@@ -1,0 +1,35 @@
+. g - right
+. a, c, d - right
+. b, c, e - right -> An immutable object cannot be garbage collected. String is immutable. StringBuffer like StringBuilder are mutable classes
+. b - right -> the insert() method insert the String before the index
+. b x f -> java does not allow you to compare with == if a String is equal to a StringBuilder 
+. b - right
+. b, d, e - right
+. a, d, e - right
+. c - right
+. f - right
+. e - right
+. a - right
+. f - right
+. a, c - right
+. c, e, f - right
+. c - right
+. f - right
+. a, c, d, e - right
+. c x b, c -> Two ArrayList with the same content are equal. Two arrays with the same content and order are equal.
+. d - right
+. c - right
+. d - right
+. a - right
+. a x -> Converting from an array to an ArrayList uses Arrays.asList(names)
+. b x -> After sorting, hex contains [30, 3A, 8, FF]. Remember that numbers sort before letters and strings sort alphabetically. This makes 30 come before 8. A binary search correctly finds 8 at index 2 and 3A at index 1. It cannot find 4F but notices it should be at index 2. The rule when an item isn抰 found is to negate that index and subtract 1. Therefore, we get 𣇻, which is �3.
+. a, b, d - right
+. b - right
+. d, f - right
+. b x -> A LocalDate does not have a time element. Therefore, it has no method to add hours and the code does not compile.
+. f - right
+. b - right
+. a x -> Even though d has both date and time, the formatter only outputs time.
+. b - right
+
+

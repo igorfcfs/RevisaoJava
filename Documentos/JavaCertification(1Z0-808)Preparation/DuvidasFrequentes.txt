@@ -1,0 +1,420 @@
+Em um construtor, caso use super(), ele sempre vem primeiro, caso não use super() mas use this(), ele sempre vem primeiro, caso use super() e this(), super vem primeiro e this depois.
+
+return; -> não retorna nada
+return this; retorna um objeto do tipo de retorno do metodo?
+
+sobrecarga(Overload) X sobrescrita(Override)
+Assiatura do método igual
+
+javac X.java
+java X <args>
+
+There are three types of variables in Java: Local, Instance, and Static.
+
+A local variable in Java is a variable that's declared within the body of a method.
+
+Instance variables in Java are non-static variables which are defined in a class outside any method, constructor or a block. Each instantiated object of the class has a separate copy or instance of that variable. An instance variable belongs to a class.
+
+When a variable is declared static in Java programming, it means that the variable belongs to the class itself rather than to any specific instance of the class.
+
+final keyoword
+variables -> means that the value cannot change
+methods -> means that the method cannot be overrided
+
+abstract keyoword
+class -> means that the class cannot be instantiated
+method -> means that the method needs to be overrided
+
+
+
+In Java, an initializer is a block of code that has no associated name or data type and is placed outside of any method, constructor, or another block of code
+
+Static initializer block
+class X{
+	static {System.out.println();}
+}
+
+Instance initializer block.
+class X{
+	{System.out.println();}
+}
+
+Order of initialization when we create a class instance
+1. Variables creations
+2. Static initializer block
+3. Instance initializer block
+4. Constructor
+
+
+java uses a period . to separate packages.
+javac takes a .java file and returns a .class file.
+
+
+
+static public void main(String[] args){} = public static void main(String[] args){}
+
+
+questoes simulado 2 duvida
+77
+81
+83 -> decorar
+86 -> decorar
+87 -> decorar
+88
+89 -> decorar
+93 -> decorar
+109 -> decorar dms
+
+
+abstract final class A{} //impossible
+final -> the class cannot be extended
+abstract -> the class cannot be instantiated
+
+
+The protected, package-private, and public access modifiers can each be applied to abstract methods.
+
+concrete class x abstract class x interface
+concrete class -> cannot have abstract methods
+abstract class -> can have both, concrete and abstract methods
+interface -> can have only abstract methods, excepted by default method
+
+double value;
+int getValue() {return value;} //valido, auto-casting
+
+inteiro: autocasting para int
+local variables need being initialized always
+
+Valores padrao de atributos
+String = null
+boolean = false
+int = 0
+double = 0.0
+
+
+
+Strings sao imutaveis, StringBuilder nao
+    String movie = "The";
+    movie.concat(" ").concat("MATRIX".toLowerCase());
+    System.out.print(movie.substring(5,6));
+
+
+no switch statement o unico tipo nao permitido e float ou double
+
+bytecodes in java -> .class extension
+.java extension is the file
+
+lenient -> amplo, aberto
+
+Arrays and arraylist are muttable
+
+
+Compare Strings
+String pool X String...
+StringBuilder
+Interface
+Encapsulation, Inheritance and Polimorfism
+Operators Precedence
+Java Data Types
+Return types
+Exceptions -> Checked(need do be treated) & Unchecked(doesn't need to be treated)
+Lambda & Predicates
+Garbage Collector(GC)
+LocalDate, LocalDateTime, Calendar, Period
+
+Hiding X Overriding
+hide variables
+hide static methods
+override instance methods
+
+!b++ > 100 -> error
+!(b++ > 100) -> no error
+
+public interface Predicate<T> {
+	boolean test(T t);
+}
+
+
+Illegal combination
+static abstract
+
+Interface
+static - tem corpo
+default - metodo abstrato com corpo
+abstract - nao tem corpo (padrao)
+
+String/StringBuilder -> .length()
+Array -> .length
+List -> .size()
+
+Emptying a StringBuilder:
+StringBuilder bucket = new StringBuilder("Empty me!");
+bucket.delete(0, bucket.length());
+
+varargs -> must be the last parameter of a method -> int x, String... y
+
+Polimorfismo
+Atributos -> A esquerda sempre prevalece, se não achar na esquerda, ai sim procura na direita
+Métodos -> A direita sempre prevalece, se não achar na esquerda, ai sim procura na esquerda
+X x = new Y();
+x.x;
+
+fields are attributes that are instance variables
+
+IOExcepcion is checked
+
+Bibliotecas java
+java.util -> List
+java.util.function -> Predicate
+java.time -> LocalDateTime, LocalDate, LocalTime
+java.time.format -> DateTimeFormatter, Period
+
+
+Variaveis
+Locais -> void x(int x)
+Globais -> String s;
+Instâcia -> private int x;
+Classe -> private static int x;
+Constante -> private final int CONST;
+Constante -> private static final int CONST;
+
+wheter = if
+
+Arrays
+Arrays.toString(args) -> se args for vazio retorna []
+Arrays.sort() -> ?
+Arrays.binarySearch() -> ?
+System.arraycopy() -> ?
+
+StringBuider
+
+break so e permitido em loops ou switch
+labeled break -> magic: if(qty <= 0) break magic; -> Sem problemas
+
+Math.random() -> ?
+
+An instance variable can only be referenced from instance methods in the class.
+A static variable can be referenced from any method
+
+intance -> instance
+static -> static & instance
+
+Import
+Date
+java.util.*;
+java.sql.*; //nao compila
+
+java.util.Date;
+java.sql.*; //compila
+
+java.util.Date;
+java.sql.Date; // nao compila
+
+java.util.Date;
+Date date;
+java.sql.Date dateSql;//compila usando as duas
+
+switch -> byte, short, int, long, enum e string
+static - class variable, field, attribute
+/*default*/ -> instance variable, field, attribute
+
+
+quando soma uma string null, o null vira string
+Given a try statement, if both the catch block and the finally block each throw an exception, what does the caller see? -> The exception from the finally block
+
+
+Error and RuntimeException is unchecked
+
+Nao pode usar o metodo concat para strings nulas
+
+
+Nao pode chamar super() e this() no mesmo construtor, ou um, ou outro, pois cada um deve aparecer na primeira linha
+
+<char>.concat(<string>) -> compilation error
+
+float x = 1000; //ok
+float y = 1000.0; //compilation error
+float z = 1000.0f; //ok
+float a = (float)1000.0; //ok
+
+For a given non-null String myTestVariable, what is the resulting value of executing the statement myTestVariable.equals(null)? -> do not compile
+
+String - insertString()
+StringBuilder - insert()
+
+To force garbage collection to occur at a certain point call System.gc();
+
+IOException is a checked exception type
+
+
+virtual methods -> every instance method except by final, static and private
+
+The smallest unit you can add to a LocalTime object is nanoseconds
+
+The catch clause argument is always of type Throwable.
+
+StringBuilder sb1 = new StringBuilder() -> will create a StringBuilder object with no characters but with an initial capacity to store 16 characters.
+
+non-static variables cannot be on static contexts
+
+simulado 4:
+1
+4
+80
+89
+107 -> finalize() may be called zero or one times
+115 -> case <constant expression(numero inteiro ou variavel final)>
+157 -> voce pode declarar um metodo usando Exception como tipo de retorno - return new Exception()
+usar throws simulado 4 questão 161
+erro de inicializacao na variavel if e else if questao 168
+questão 169
+questão 172
+178
+
+IOException Herda de Exception
+
+Exception -> try-catch ou throws
+RuntimeException -> nothing
+
+Strings são imutáveis
+
+abstract public class X{} -> válido
+final public class X{} -> válido
+
+uma classe só pode ser pública ou package-private
+
+O que identifica a assinatura do método é a união das informações de nome do método e parâmetros, logo os seguintes métodos listados abaixo seriam considerados erros de compilação:
+public class Contas {
+    public int fazerConta(int num1, int num2) { }
+    public float fazerConta(int num1, int num2) { } //Erro de compilação.
+}
+
+
+posso usar o do-while sem {}:
+    public class DoCompare {
+      public static void main(String[] args){
+        String[] table = {"aa", "bb", "cc"};
+        int ii = 0;
+        do
+        while (ii < table.length)
+        System.out.println(ii++);
+        while (ii < table.length);
+      }
+    }
+
+
+Para criar uma data:
+LocalDate ld = LocalDate.of(<ano>, <mês(comeca do 1)>, <dia>);
+ou
+LocalDate ld = LocalDate.of(<ano>, Month.<mês tudo em caixa alta em ingles>, <dia>)
+
+
+toda variavel de uma interface é public static final.
+
+
+
+  public boolean sell() {
+    if(price<10) {
+      price++;
+      return true;
+    } else if(price>=10) {
+      return false;
+    } -> nao compila, falta o return statment, pq o else if nao e garantia
+  }
+
+
+metodos String x StringBuilder
+
+
+trabalhar com lambdas:
+java.util.function.Predicate;
+java.util.stream.Collectors;
+
+
+Duvidas sobre Garbage Collector:
+Voce nao tem como forçar a coleta de lixo, mesmo utilizando o gc() nao é garantido que a coleta seja executada
+System.gc() -> nao forca a coleta de lixo
+finalie() -> pode ser chamado 0 ou 1 vez
+
+
+
+
+Codigo:
+interface Sword {
+    public Number swing();
+}
+abstract class BasicSword {
+    protected int baseSwing = 10;
+    public Integer swing() {
+        return baseSwing;
+    }
+}
+public class MasterSword extends BasicSword implements Sword {
+    private int baseSwing = 20;
+    public static void main(String[] args) {
+        System.out.println(new MasterSword().swing());
+    }
+}
+
+
+
+Métodos sobrecarregados necessitam ter lista de parâmetros diferentes, enquanto métodos sobreescritos necessitam ter exatamente o mesmo return type.
+
+
+
+int x() throws Exception{}
+int x(){} -> override, nao precisa declarar a excecao
+
+
+Existencia do metodo insert():
+nao existe um metodo insert em List, voce pode usar um add(1, "xxx");
+o metodo insert existe em StringBuilder
+
+
+
+uma list so e equal a outra se os valores forem iguais e estiverem na mesma ordem
+
+
+String nao e uma wrapper class
+
+
+long x = 5; //compile
+long x = 5L; // compile
+Long x = 5; //DOES NOT COMPILE
+Long x = 5L; //COMPILE
+
+
+nao existe insert em String
+compila e imprime 10
+
+metodos de classes abstratas nao podem ser privates
+metodos de interfaces nao podem ser privates nem protecteds
+
+switch -> byte/Byte, short/Short, int/Integer, long/Long, Enum, String e char/Character
+
+
+
+public class Brasil {
+	public static void main(String[] args) {
+		String[] cidades = new String[] { "São Paulo", "Rio de Janeiro", "Belo Horizonte" };
+		String[] periodo = new String[] { "Dia", "Noite" };
+		for (int i = 0, j = 0; i < 1; System.out.print("-"), i++, j++) {
+		    System.out.print(cidades[i] + " " + periodo[j]);
+		}
+    }
+}
+//esse codigo funciona e output: São Paulo Dia-
+
+
+
+final Object e = new Exception();
+final Exception data = (RuntimeException) e; // ClassCastException, final RuntimeException data = (Exception) e;
+System.out.print(data);
+Não é possível fazer o "cast" de um objeto pai para o filho, apenas o contrário.
+
+
+
+int i = 0;
+do{i++;} while(1 == 1);
+System.out.println(); // DOES NOT COMPILE - Unreachable code
+
+StringBuffer não é permitido em um loop for-each

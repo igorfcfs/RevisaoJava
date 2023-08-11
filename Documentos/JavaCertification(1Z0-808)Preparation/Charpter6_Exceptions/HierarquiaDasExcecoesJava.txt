@@ -1,0 +1,129 @@
+java.lang.Throwable
+â”œâ”€â”€ java.lang.Error
+â”‚   â”œâ”€â”€ java.lang.AssertionError
+â”‚   â”œâ”€â”€ java.lang.LinkageError
+â”‚   â”‚   â”œâ”€â”€ java.lang.BootstrapMethodError
+â”‚   â”‚   â”œâ”€â”€ java.lang.ClassCircularityError
+â”‚   â”‚   â”œâ”€â”€ java.lang.ClassFormatError
+â”‚   â”‚   â”‚   â””â”€â”€ java.lang.UnsupportedClassVersionError
+â”‚   â”‚   â””â”€â”€ java.lang.IncompatibleClassChangeError
+â”‚   â”‚       â”œâ”€â”€ java.lang.AbstractMethodError
+â”‚   â”‚       â”œâ”€â”€ java.lang.IllegalAccessError
+â”‚   â”‚       â”œâ”€â”€ java.lang.InstantiationError
+â”‚   â”‚       â”œâ”€â”€ java.lang.NoSuchFieldError
+â”‚   â”‚       â””â”€â”€ java.lang.NoSuchMethodError
+â”‚   â”œâ”€â”€ java.lang.NoClassDefFoundError
+â”‚   â”œâ”€â”€ java.lang.UnsatisfiedLinkError
+â”‚   â”œâ”€â”€ java.lang.VerifyError
+â”‚   â”œâ”€â”€ java.lang.ThreadDeath
+â”‚   â””â”€â”€ java.lang.VirtualMachineError
+â”‚       â”œâ”€â”€ java.lang.InternalError
+â”‚       â”œâ”€â”€ java.lang.OutOfMemoryError
+â”‚       â”œâ”€â”€ java.lang.StackOverflowError
+â”‚       â””â”€â”€ java.lang.UnknownError
+â””â”€â”€ java.lang.Exception
+    â”œâ”€â”€ java.lang.RuntimeException
+    â”‚   â”œâ”€â”€ java.lang.ArithmeticException
+    â”‚   â”œâ”€â”€ java.lang.ArrayIndexOutOfBoundsException
+    â”‚   â”œâ”€â”€ java.lang.ArrayStoreException
+    â”‚   â”œâ”€â”€ java.lang.ClassCastException
+    â”‚   â”œâ”€â”€ java.lang.EnumConstantNotPresentException
+    â”‚   â”œâ”€â”€ java.lang.IllegalMonitorStateException
+    â”‚   â”œâ”€â”€ java.lang.IllegalStateException
+    â”‚   â”œâ”€â”€ java.lang.IndexOutOfBoundsException
+    â”‚   â”‚   â”œâ”€â”€ java.lang.StringIndexOutOfBoundsException
+    â”‚   â”‚   â””â”€â”€ java.lang.NegativeArraySizeException
+    â”‚   â”œâ”€â”€ java.lang.NullPointerException
+    â”‚   â”œâ”€â”€ java.lang.SecurityException
+    â”‚   â”œâ”€â”€ java.lang.IllegalArgumentException
+    â”‚   â”‚   â”œâ”€â”€ java.lang.IllegalThreadStateException
+    â”‚   â”‚   â””â”€â”€ java.lang.NumberFormatException
+    â”‚   â”œâ”€â”€ java.lang.IllegalMonitorStateException
+    â”‚   â”œâ”€â”€ java.lang.IllegalStateException
+    â”‚   â”œâ”€â”€ java.lang.IndexOutOfBoundsException
+    â”‚   â”‚   â”œâ”€â”€ java.lang.ArrayIndexOutOfBoundsException
+    â”‚   â”‚   â””â”€â”€ java.lang.StringIndexOutOfBoundsException
+    â”‚   â”œâ”€â”€ java.lang.NegativeArraySizeException
+    â”‚   â”œâ”€â”€ java.lang.NullPointerException
+    â”‚   â”œâ”€â”€ java.lang.SecurityException
+    â”‚   â”œâ”€â”€ java.lang.TypeNotPresentException
+    â”‚   â””â”€â”€ java.lang.UnsupportedOperationException
+    â”œâ”€â”€ java.lang.InterruptedException
+    â”œâ”€â”€ java.lang.CloneNotSupportedException
+    â”œâ”€â”€ java.lang.NoSuchFieldException
+    â”œâ”€â”€ java.lang.NoSuchMethodException
+    â”œâ”€â”€ java.lang.ClassNotFoundException
+    â”œâ”€â”€ java.lang.IllegalAccessException
+    â”œâ”€â”€ java.lang.InstantiationException
+    â”œâ”€â”€ java.lang.reflect.InvocationTargetException
+    â””â”€â”€ java.io.IOException
+
+
+ExceÃ§Ãµes do Java 8:
+java.lang.Throwable (implements java.io.Serializable)
+
+    java.lang.Error
+        java.lang.AssertionError
+        java.lang.LinkageError
+            java.lang.BootstrapMethodError
+            java.lang.ClassCircularityError
+            java.lang.ClassFormatError
+                java.lang.UnsupportedClassVersionError
+            java.lang.ExceptionInInitializerError
+            java.lang.IncompatibleClassChangeError
+                java.lang.AbstractMethodError
+                java.lang.IllegalAccessError
+                java.lang.InstantiationError
+                java.lang.NoSuchFieldError
+                java.lang.NoSuchMethodError
+            java.lang.NoClassDefFoundError
+            java.lang.UnsatisfiedLinkError
+            java.lang.VerifyError
+        java.lang.ThreadDeath
+        java.lang.VirtualMachineError
+            java.lang.InternalError
+            java.lang.OutOfMemoryError
+            java.lang.StackOverflowError
+            java.lang.UnknownError
+    java.lang.Exception 
+        java.lang.CloneNotSupportedException
+        java.lang.InterruptedException
+        java.lang.ReflectiveOperationException
+            java.lang.ClassNotFoundException
+            java.lang.IllegalAccessException
+            java.lang.InstantiationException
+            java.lang.NoSuchFieldException
+            java.lang.NoSuchMethodException
+        java.lang.RuntimeException
+            java.lang.ArithmeticException
+            java.lang.ArrayStoreException
+            java.lang.ClassCastException
+            java.lang.EnumConstantNotPresentException
+            java.lang.IllegalArgumentException
+                java.lang.IllegalThreadStateException
+                java.lang.NumberFormatException
+            java.lang.IllegalMonitorStateException
+            java.lang.IllegalStateException
+            java.lang.IndexOutOfBoundsException
+                java.lang.ArrayIndexOutOfBoundsException
+                java.lang.StringIndexOutOfBoundsException
+            java.lang.NegativeArraySizeException
+            java.lang.NullPointerException
+            java.lang.SecurityException
+            java.lang.TypeNotPresentException
+            java.lang.UnsupportedOperationException
+
+Lançadas pela JVM:
+NullPointerException
+IllegalArgumentException
+NumberFormatException
+ClassCastException
+ArrayIndexOutOfBoundsException
+
+error and runtime -> unchecked
+Exception -> checked
+
+JVM Exceptions − These are exceptions/errors that are exclusively or logically thrown by the JVM.
+Examples: NullPointerException, ArrayIndexOutOfBoundsException, ClassCastException.
+
+Programmatic Exceptions − These exceptions are thrown explicitly by the application or the API programmers.
