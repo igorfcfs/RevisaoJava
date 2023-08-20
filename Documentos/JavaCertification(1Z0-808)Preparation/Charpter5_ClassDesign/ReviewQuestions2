@@ -1,0 +1,20 @@
+b - right
+e - right
+a, b, d, e - right
+c, e - right
+a, d, e, f - right
+d - right
+b, c - right
+f - right
+a - right
+b, c, e, f - right
+a, d, e - right
+b*** - right
+a*** - right
+b, c x c -> an abstract class could implement HasVocalCords without the need to override themakeSound() method
+b, c x b -> a superclass may have already implemented an inherited interface, so the concrete subclass would not need to implement the method
+e - right
+b - right
+d, e x e -> method 5 is an overload
+a, c - right
+b x a

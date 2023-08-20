@@ -1,18 +1,18 @@
 Order of operator precedence
-Operator 		Symbols and examples
 
-Post-unary operators: expression++,expression--
-Pre-unary operators: ++expression, --expression
-Other unary operators: ~,+, -, !
-Multiplication/Division/Modulus: *, /, %
-Addition/Subtraction: +, -
-Shift operators: <<, >>, >>>
-Relational operators: <, >, <=, >=, instanceof
-Equal to/not equal to: ==, !=
-Logical operators: &, ^, |
-Short-circuit logical operators: &&, ||
-Ternary operators: boolean expression ? expression1 : expression2
-Assignment operators: =, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=
+Operator 							Symbols and examples
+Post-unary operators: 				expression++,expression--
+Pre-unary operators: 				++expression, --expression
+Other unary operators: 				~, +, -, !
+Multiplication/Division/Modulus:	*, /, %
+Addition/Subtraction: 				+, -
+Shift operators: 					<<, >>, >>>
+Relational operators: 				<, >, <=, >=, instanceof
+Equal to/not equal to: 				==, !=
+Logical operators: 					&, ^, |
+Short-circuit logical operators: 	&&, ||
+Ternary operators: 					boolean expression ? expression1 : expression2
+Assignment operators: 				=, +=, -=, *=, /=, %=, &=, ^=, |=, <<=, >>=, >>>=
 ------------------------------------------------------------------------------------------
 Numeric Promotion Rules
 1. If two values have different data types, Java will automatically promote one of the values
@@ -29,7 +29,7 @@ Let’s tackle some examples for illustrative purposes:
 ■ What is the data type of x * y?
 int x = 1;
 long y = 33;
-If we follow the fi rst rule, since one of the values is long and the other is int, and long
+If we follow the first rule, since one of the values is long and the other is int, and long
 is larger than int, then the int value is promoted to a long, and the resulting value is
 long.
 
@@ -56,6 +56,9 @@ float y = 13;
 double z = 30;
 In this case, we must apply all of the rules. First, x will automatically be promoted to
 int solely because it is a short and it is being used in an arithmetic binary operation.
+The promoted x value will then be automatically promoted to a float so that it can be
+multiplied with y. The result of x * y will then be automatically promoted to a double, so
+that it can be divided with z, resulting in a double value.
 
 
 int x = (int)1.0;

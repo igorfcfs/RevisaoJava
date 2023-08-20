@@ -1,9 +1,3 @@
-Anotations
-
---------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------
-
 String Class
 
 Creating and manipulating Strings
@@ -217,7 +211,7 @@ method signature: public String trim()
 System.out.println("abc".trim()); // abc
 System.out.println("\t a b c\n".trim()); // a b c
 
-The fi rst example prints the original string because there are no whitespace characters
+The first example prints the original string because there are no whitespace characters
 at the beginning or end. The second example gets rid of the leading tab, subsequent spaces,
 and the trailing newline. It leaves the spaces that are in the middle of the string.
 
@@ -281,8 +275,7 @@ assign sb1 to point to it.
 The second says to create a StringBuilder containing a specific
 value and assign sb2 to point to it.
 
-For the first two, it tells Java to manage the implementa-
-tion details.
+For the first two, it tells Java to manage the implementation details.
 
 The final example tells Java that we have some idea of how big the eventual value
 will be and would like the StringBuilder to reserve a certain number of slots for characters.
@@ -374,7 +367,7 @@ sb.insert(4, "-"); // sb = -ani-mals-
 System.out.println(sb);
 
 
-3 & 4. delete & deleteCharAt() -> The delete() method is the opposite of the insert() method.
+3 & 4. delete() & deleteCharAt() -> The delete() method is the opposite of the insert() method.
 It removes characters from the sequence and returns a reference to the current StringBuilder.
 The deleteCharAt() method is convenient when you want to delete only one character.
 
@@ -450,7 +443,7 @@ public class Tiger {
 	}
 }
 
-String and StringBuilder are a sequence of characters
+String and StringBuilder are a sequence of characters (CharSequence)
 
 
 
@@ -829,7 +822,7 @@ System.out.println(birds); // [blue jay, cardinal, hawk, robin]
 
 
 
-2. remove() -> remove the fi rst matching value in the ArrayList or remove the
+2. remove() -> remove the first matching value in the ArrayList or remove the
 element at a specified index.
 
 method signatures:
@@ -983,14 +976,14 @@ Character 				None 								None
 Autoboxing
 
 List<Double> weights = new ArrayList<>();
-5: weights.add(50.5); // [50.5]
-6: weights.add(new Double(60)); // [50.5, 60.0]
-7: weights.remove(50.5); // [60.0]
-8: double first = weights.get(0); // 60.0
+weights.add(50.5); // [50.5]
+weights.add(new Double(60)); // [50.5, 60.0]
+weights.remove(50.5); // [60.0]
+double first = weights.get(0); // 60.0
 
 List<Integer> heights = new ArrayList<>();
-4: heights.add(null);
-5: int h = heights.get(0); // NullPointerException
+heights.add(null);
+int h = heights.get(0); // NullPointerException
 
 List<Integer> numbers = new ArrayList<>();
 numbers.add(1);

@@ -11,7 +11,7 @@
 . c, d - right
 . g - right
 . a, d - right
-. b x d -> /my/directory/named/A/Bird.java, if we compile from /my/directory/ package named.A
+. b x d -> /my/directory/named/A/Bird.java, if we compile from /my/directory/ - package named.A
 . a, e - right
 . b, c, d - right
 . a, e - right

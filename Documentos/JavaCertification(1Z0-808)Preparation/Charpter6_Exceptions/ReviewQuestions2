@@ -1,0 +1,20 @@
+b - right
+b, d - right
+c - right
+b - right
+a, d, e x a, b, d
+c - right
+a x c
+e - right
+b - right
+e - right
+a - right
+a, b, d, g*** - right
+a, b, c, e*** - right
+a, c, d, e*** - right
+a, b, d, e - right
+b - right
+a, c x a, c, d, e -> voce sempre pode lancar uma excecao nao checada mesmo que seja uma subclasse de Exception
+a, b, c, e*** - right
+c x c, e -> StackOverFlowError is an unchecked exception
+a, e - right

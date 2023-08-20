@@ -389,7 +389,7 @@ compila e imprime 10
 metodos de classes abstratas nao podem ser privates
 metodos de interfaces nao podem ser privates nem protecteds
 
-switch -> byte/Byte, short/Short, int/Integer, long/Long, Enum, String e char/Character
+switch -> byte/Byte, short/Short, int/Integer, Enum, String e char/Character
 
 
 
@@ -418,3 +418,162 @@ do{i++;} while(1 == 1);
 System.out.println(); // DOES NOT COMPILE - Unreachable code
 
 StringBuffer não é permitido em um loop for-each
+
+Methods String and StringBuilder
+String & StringBuilder -> charAt(), indexOf(), replace() and substring()
+String -> length(), charAt(), indexOf(), substring(), toLowerCase(), toUpperCase(), equals(), equalsIgnoreCase(), startsWith(), endsWith(), contains(), replace(), trim()
+StringBuilder -> append(), insert(), delete(), deleteCharAt(), reverse(), toString() - equals()
+
+
+constantes em java são 'public static final', variáveis de interfaces são por padrão constantes, entao, os modificadores 'public static final' sao inseridos implicitamente
+
+Apenas os tipos primitivos byte , short , char e int; os wrappers Character , Byte , Short e Integer; String e Enums podem constar no switch.
+
+
+Decorar
+Uma declaração switch pode ter qualquer número de declarações case e no máximo uma declaração default.
+
+import java.util.*; import java.sql.*; ... Date date = new Date(); //compilation error
+
+Nenhum data type previne o uso de return
+
+X(int a){}...Y(int a){super()} // vc tem que declarar na classe X um construtor default explicitamente
+
+Uma declaração try possui zero ou um bloco(s) finally e zero ou mais bloco(s) catch.
+
+import static pacote.Classe.metodoDeClasse;
+
+Herança permite que a classe acesse atributos e métodos comumente usados
+
+O Java utiliza pass-by-value para enviar dados em um método.
+
+Apesar de arrays fazerem uso de primitivos, por definição 'todo array é um objeto'.
+
+A palavra chave "new" serve para chamar o construtor de uma classe e criar a partir desta classe uma instância. Ela 'Instancia um Objeto'.
+
+Toda constante precisa ter um valor atribuido, senão diretamente, pode ser pelo static initialization block. private static final int x = 10;
+
+Não é possível forçar o Garbage Collection a ocorrer, você pode apenas sugerir à JVM que ele ocorra.
+
+O operador v-- decrementa o valor em 1 e retorna o valor original após o decremento.
+O operador --v decrementa o valor em 1 e retorna o valor decrementado após o decremento.
+O operador v++ incrementa o valor em 1 e retorna o valor original após o incremento.
+O operador ++v incrementa o valor em 1 e retorna o valor incrementado após o incremento.
+
+O método finalize pode ser chamado zero ou uma vez
+
+Métodos sobrecarregados necessitam ter lista de parâmetros diferentes, enquanto métodos sobrescritos necessitam ter o return type covariante.
+
+    String[] playlist = new String[5];
+    playlist[0] = "Brave New World";
+    playlist[1] = "Take The Time";
+    3 objetos nesse codigo, o que define o array e as duas strings
+    
+    String[] os = new String[] { "Mac", "Linux", "Windows" };
+    System.out.println(Arrays.binarySarch(os, "Linux"));
+    O Java requere um array ordenado para fazer um "binarySearch", pode acontecer de retornar o valor 1, porém este valor não é garantido.
+    
+ Os tipos varargs só podem ser usados como parâmetros em um método. String... a = "ass"; // nao compila
+    
+try, catch e finally requerem colchetes
+    
+Você pode converter um primitivo a um wrapper somente de assiná-lo. "Integer i = 3;"
+    
+Um método com argumentos do tipo "Long" não pode receber um tipo "int"(ou até mesmo Integer), o autoboxing só seria feito se fosse um "long" a ser passado.
+
+as classes "LocalDateTime" e "LocalTime" possuem as definições de hora, minuto e segundo.
+
+Se houver "catch" consecutivos dentro de uma declaração "try-catch" ou houver "catch"'s dentro de outros "catch"'s é necessário diferenciar o nome da variável entre os "catch"'s.
+
+private keyword provides the highest level of Encapsulation in Java. Though you can hide the private method in Java by declaring another private method with the same name and different method signature.
+ -> nós escondemos private methods redeclarando-os.
+ 
+ os metodos setter nao existem nos tipos Dates (LocalDate, LocalTime, LocalDateTime), pois são imutáveis.
+ 
+ Interfaces podem implementar métodos estáticos, mas não poderam ser utilizados pela instância, apenas diretamente da interface.
+ 
+ Uma variável static é sempre visível para todas as instâncias da classe. O único tipo de variável que está sempre visível para todas as instâncias é o static. Apesar de public parecer verdadeiro, ela não está compartilhada para todas as instâncias.
+ 
+ Polimorfismo:
+ Bird bird = new Chicken();
+ bird.fly();
+ se fly for um metodo estatico - chama a versão da classe Bird
+ se fly for um metodo de instancia - chama a versao da classe Chicken
+ a versão dos atributos sempre é a da referência
+ 
+ 
+ 
+ 
+ A exceção "Exception" é uma exceção checada, portanto deve ser declarada no método ou tratada por um bloco "try-catch".
+ public class Sick {
+    public static void takePills() { // -> deveria ter um throws Exception aqui
+    	try {
+    		String pills[] = new String[2];
+    		System.out.println(pills[2]);
+    	} catch (RuntimeException e) {
+    		System.out.println("Lost a pill!");
+    	} finally {
+    		throw new Exception();
+    	}
+    }
+    public static void main(String... pills) {
+    	new Sick().takePills();
+    }
+}
+
+if just allows labeled breaks
+switch doesn't allow continue
+
+<= is used with numeric variables, not with boolean, it just returns a boolean
+== and ! that is used with boolean variables
+
+
+
+3: int x = 0;
+4: String s = null;
+5: if(x == s) System.out.println("Success");
+6: else System.out.println("Failure");
+int cannot be compared to a String
+
+"Period" pode ser usado somente para períodos de dias, semanas, meses e anos, não é possível um "Period" de minutos.
+
+
+A default constructor is the constructor automatically generated by JVM
+class X{} -> this class has a default constructor
+class Y{Y(){}} -> this class does not has a default constructor
+
+
+
+ClassCastException
+Object x = new Integer(0);
+System.out.println((String)x);
+
+67
+68
+97
+112
+113 - resolver de uma ves por todas o gc
+114
+
+
+    public class Capricchio {
+       public static void main (String[] args) {
+         Object obj = null;
+         StringBuilder sb = new StringBuilder();
+         sb.append(obj); // converte null p/ string
+         System.out.println(sb.length());
+      }
+    }
+    
+    
+    
+    import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+          String[] names = {"Tom", "Dick", "Harry"};
+    //List<String> list = names.asList();  // Line 7 - error
+    List<String> list = Arrays.asList(names);
+    list.set(0, "Sue");                  // Line 8
+    System.out.println(names[0]);
+    }
+}

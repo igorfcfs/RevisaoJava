@@ -2,11 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class NotasETEC {
-	static final int NF = 0;
-	static final int I = 1;
-	static final int R = 2;
-	static final int B = 3;
-	static final int MB = 4;
+	private static final int NF = 0;
+	private static final int I = 1;
+	private static final int R = 2;
+	private static final int B = 3;
+	private static final int MB = 4;
 	
 	enum Notas {
 		NF, I, R, B, MB;
@@ -39,13 +39,13 @@ public class NotasETEC {
 					notas += MB;
 					break;
 				default:
-					System.out.println("Você não digitou uma nota válida. Tente novamente.");
+					System.out.println("Você não digitou uma nota válida. Tente novamente.\n");
 					i = 0;
 					continue x;
 				}
 			}
-			double mediaDouble = (double) notas/atividadesPropostas;
-			int mediaInt = (int) Math.round(mediaDouble);
+			double mediaDouble = (double) (notas/atividadesPropostas);
+			int mediaInt = (int) (Math.round(mediaDouble));
 			Notas media = null;
 			switch(mediaInt) {
 			case 0:

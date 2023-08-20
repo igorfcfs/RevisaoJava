@@ -116,9 +116,9 @@ java.lang.Throwable (implements java.io.Serializable)
 Lançadas pela JVM:
 NullPointerException
 IllegalArgumentException
-NumberFormatException
 ClassCastException
 ArrayIndexOutOfBoundsException
+ExceptionInInitializerError
 
 error and runtime -> unchecked
 Exception -> checked

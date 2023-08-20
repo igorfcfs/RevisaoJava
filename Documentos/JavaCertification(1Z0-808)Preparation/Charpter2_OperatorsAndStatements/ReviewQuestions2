@@ -1,0 +1,20 @@
+a, d, f x d, f -> <= is used with numeric variables, not with boolean, it just returns a boolean. == and ! that is used with boolean variables
+a, b, d - right
+c x f -> String cannot be assigned to a boolean value
+b, c, d, f - right
+c - right
+f - right
+d - right
+b - right
+f - right
+d - right
+a - right
+b x d -> int cannot be compared to a String
+a - right
+c - right
+e - right
+d - right
+d - right
+b - right
+d - right
+b - right

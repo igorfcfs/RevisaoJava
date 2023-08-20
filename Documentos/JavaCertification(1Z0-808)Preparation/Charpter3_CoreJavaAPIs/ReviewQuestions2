@@ -1,0 +1,33 @@
+g - right
+a, c, d - right
+b, c, e - right
+b - right
+b x f -> java does not allow you compare String with StringBuilder using ==
+b - right
+b, d, e - right
+a, d, e - right
+c - right
+f - right
+e - right
+a - right
+f - right
+a, c - right
+c, e, f - right
+c - right
+f - right
+a, c, f x a, c, d, e
+a, c x b, c -> Two ArraysLists with the same content are equal
+b x d -> Compilation Error
+c - right
+d - right
+a - right
+c - right
+d - right
+d x a, b, d -> You cant pass null as an argument to array list, even if its type is a Wrapper Class
+b - right
+d, f - right
+b x d -> A LocalDate cannor have a time element
+f - right
+b - right
+e - right
+b - right
